@@ -1,0 +1,79 @@
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[14].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[14].oneOf[9].use[5]!./components/shared/footer/Footer.module.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.Footer_footer__AMi67 {
+    width: 100%;
+}
+@media (min-width: 640px) {
+    .Footer_footer__AMi67 {
+        max-width: 640px;
+    }
+}
+@media (min-width: 768px) {
+    .Footer_footer__AMi67 {
+        max-width: 768px;
+    }
+}
+@media (min-width: 1024px) {
+    .Footer_footer__AMi67 {
+        max-width: 1024px;
+    }
+}
+@media (min-width: 1280px) {
+    .Footer_footer__AMi67 {
+        max-width: 1280px;
+    }
+}
+@media (min-width: 1536px) {
+    .Footer_footer__AMi67 {
+        max-width: 1536px;
+    }
+}
+.Footer_footer__AMi67 {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    max-width: unset;
+}
+@media (min-width: 640px) {
+    .Footer_footer__AMi67 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+@media (min-width: 768px) {
+    .Footer_footer__AMi67 {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+.Footer_footer__AMi67 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    --tw-bg-opacity: 1;
+    background-color: rgb(25 50 50 / var(--tw-bg-opacity));
+    padding-top: 5rem;
+    padding-bottom: 3.5rem;
+}
+.Footer_footer__AMi67 .Footer_logo__DLFu_ {
+    max-width: 7rem;
+}
+@media (min-width: 640px) {
+    .Footer_footer__AMi67 .Footer_logo__DLFu_ {
+        max-width: 100%;
+    }
+}
+.Footer_footer__AMi67 .Footer_phone__NHmjs {
+    font-family: FuturaPTDemi;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 120%;
+    color: #303030;
+    display: none;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+@media (min-width: 640px) {
+    .Footer_footer__AMi67 .Footer_phone__NHmjs {
+        display: block;
+    }
+}
