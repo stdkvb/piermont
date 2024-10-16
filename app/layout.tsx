@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.scss";
 
+import { Header, Footer } from "@/components/shared";
+
 export const metadata: Metadata = {
   title: "ЖК Пьермонт",
 };
@@ -12,7 +14,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className="antialiased min-h-screen flex flex-col">{children}</body>
+      <body className="antialiased min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }

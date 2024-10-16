@@ -6,7 +6,7 @@ type Props = {
 };
 
 export const Logo = (props: Props) => {
-  const currentColor = props.color ? props.color : "white";
+  const currentColor = props.color ?? "white";
 
   return (
     <Link href="/" className="block w-fit mt-[-16px]">

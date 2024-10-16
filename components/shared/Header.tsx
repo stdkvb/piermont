@@ -5,7 +5,7 @@ type Props = {};
 
 export const Header = (props: Props) => {
   return (
-    <header className="container py-6 sm:py-8 flex items-center justify-between bg-slate-400">
+    <header className="container py-6 sm:py-8 flex items-center justify-between absolute top-0 left-0 z-10">
       <Button variant="rounded" className="hidden md:block min-w-60">
         Выбрать квартиру
       </Button>
