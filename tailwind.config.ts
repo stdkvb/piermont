@@ -84,6 +84,7 @@ const config: Config = {
           fontSize: "clamp(3rem, 4vw, 5.25rem)",
           lineHeight: "100%",
           color: theme("colors.darkGrey"),
+          textTransform: "uppercase",
         },
         ".header_3": {
           fontFamily: "MoniqaNarrowParagraph",
