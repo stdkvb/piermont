@@ -17,6 +17,7 @@ const config: Config = {
         semilightGrey: "#ECECEC",
         lightGrey: "#F5F5F5",
         darkGrey: "#303030",
+        mediumGrey: "#565656",
 
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -133,7 +134,7 @@ const config: Config = {
           fontFamily: "FuturaPTMedium",
           fontWeight: "450",
           fontSize: "clamp(0.75rem, 2vw + 0.25rem, 1rem)",
-          lineHeight: "auto",
+          lineHeight: "130%",
           color: theme("colors.darkGrey"),
           textTransform: "uppercase",
         },

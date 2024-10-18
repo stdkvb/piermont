@@ -35,7 +35,7 @@ export const Panorama: React.FC = () => {
 
   return (
     <section
-      className="relative w-full overflow-hidden"
+      className="relative w-full overflow-hidden "
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
@@ -50,7 +50,7 @@ export const Panorama: React.FC = () => {
           <img
             src="images/panorama.png"
             alt="Panorama"
-            className="h-full w-full object-cover min-h-[720px]"
+            className="h-full w-full object-cover min-h-[720px] max-h-[948px]"
           />
         </motion.div>
         <div className="absolute container mx-6 top-[270px] flex justify-between w-[200%] min-w-[2518px]">

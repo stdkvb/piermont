@@ -10,18 +10,18 @@ const buttonVariants = cva(
     variants: {
       variant: {
         gold: "bg-gold text-green hover:bg-green hover:text-white",
-        white: "bg-white text-green",
+        white: "bg-white text-green hover:bg-gold",
+        black: "bg-darkGrey text-white hover:bg-mediumGrey",
         outline:
           "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         icon: "text-primary",
-        rounded:
-          "text-white border border-white hover:bg-gold rounded-full min-h-[49px]",
+        rounded: "text-white border border-white hover:bg-gold rounded-full",
         underlined: "link",
       },
       size: {
-        default: "h-[47px] px-[80px] py-[24px]",
-        sm: "h-9 px-3",
+        default: "h-[47px] sm:h-[69px] px-[80px] py-[24px]",
+        small: "h-[49px] px-[60px] py-[14px]",
         lg: "h-11 px-8",
         icon: "h-10 w-10",
       },
