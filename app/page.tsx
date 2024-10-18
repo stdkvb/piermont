@@ -1,4 +1,4 @@
-import { MainSlider, Slider, Residence } from "@/components/shared";
+import { MainSlider, Slider, Residence, Panorama } from "@/components/shared";
 import { Parallax } from "@/components/ui/ParallaxProvider";
 import data from "../public/data.json";
 
@@ -10,6 +10,7 @@ export default function Home() {
         <Residence />
       </Parallax>
       <Slider data={data.firstSlider} />
+      <Panorama />
     </>
   );
 }

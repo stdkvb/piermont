@@ -107,3 +107,12 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Для Chrome, Safari и Opera */
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* Для IE и Edge */
+  scrollbar-width: none; /* Для Firefox */
+}

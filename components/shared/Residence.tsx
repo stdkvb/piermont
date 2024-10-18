@@ -7,7 +7,7 @@ export const Residence = () => {
     <section className="min-h-[840px] flex items-end">
       <ParallaxBanner
         layers={[
-          { image: "images/residence2.png", speed: -20, expanded: false },
+          { image: "images/residence.png", speed: -20, expanded: false },
           { image: "images/tree.png", speed: -5, expanded: false },
         ]}
         className="aspect-[2455/4995] lg:aspect-[1920/2400]"
