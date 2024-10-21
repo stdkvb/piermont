@@ -39,7 +39,6 @@ export default function Home() {
       </section>
       <Slider data={data.secondSlider} />
       <Details />
-      <UniqueFormats />
       <section
         className="h-screen max-h-[1080px] flex flex-col justify-end pb-[32px] md:pb-[64px]"
         style={{
@@ -60,6 +59,7 @@ export default function Home() {
           <Button variant="gold">узнать подробнее</Button>
         </div>
       </section>
+      <UniqueFormats />
       <section className="container py-[64px] md:py-[160px] xl:py-[120px] flex flex-col gap-[24px] xl:flex-row xl:gap-[84px]">
         <div className="flex flex-col gap-[24px] lg:w-[584px] xl:justify-end">
           <h2 className="header_2 text-gold">HART-DEVELOPMENT</h2>
