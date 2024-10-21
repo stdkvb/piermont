@@ -154,8 +154,8 @@ export const Residence = () => {
               <path
                 d="M79.8135 108.339L85.4608 110.633C89.1224 112.121 93.2121 112.163 96.9037 110.751L103.213 108.339"
                 stroke="white"
-                stroke-width="2.12727"
-                stroke-linecap="round"
+                strokeWidth="2.12727"
+                strokeLinecap="round"
               />
             </svg>
           </div>

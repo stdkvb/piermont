@@ -9,3 +9,5 @@ export { UniqueFormats } from "./UniqueFormats";
 export { Lobby } from "./Lobby";
 export { Apartments } from "./Apartments";
 export { ApartmentCard } from "./ApartmentCard";
+export { Presentation } from "./Presentation";
+export { Excursion } from "./Excursion";

@@ -9,6 +9,8 @@ import {
   UniqueFormats,
   Lobby,
   Apartments,
+  Presentation,
+  Excursion,
 } from "@/components/shared";
 import { Parallax } from "@/components/ui/ParallaxProvider";
 import data from "../public/data.json";
@@ -16,7 +18,7 @@ import data from "../public/data.json";
 export default function Home() {
   return (
     <>
-      <MainSlider />
+      {/* <MainSlider />
       <Parallax>
         <Residence />
       </Parallax>
@@ -81,12 +83,16 @@ export default function Home() {
           </p>
           <Button variant="white">Сайт HART-DEVELOPMENT</Button>
         </div>
-        <img
-          src="images/crane.png"
-          alt="photo"
-          className="min-h-[275px] max-h-[588px] object-cover w-full"
-        />
-      </section>
+        <div className="min-h-[275px] max-h-[588px]">
+          <img
+            src="images/crane.png"
+            alt="photo"
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </section> */}
+      <Excursion />
+      <Presentation />
     </>
   );
 }

@@ -18,6 +18,7 @@ const config: Config = {
         lightGrey: "#F5F5F5",
         darkGrey: "#303030",
         mediumGrey: "#565656",
+        red: "#B30000",
 
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
