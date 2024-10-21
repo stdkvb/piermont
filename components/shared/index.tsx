@@ -6,3 +6,4 @@ export { Residence } from "./Residence";
 export { Panorama } from "./Panorama";
 export { Details } from "./Details";
 export { UniqueFormats } from "./UniqueFormats";
+export { Lobby } from "./Lobby";

@@ -12,6 +12,7 @@ const buttonVariants = cva(
         gold: "bg-gold text-green hover:bg-green hover:text-white",
         white: "bg-white text-green hover:bg-gold",
         black: "bg-darkGrey text-white hover:bg-mediumGrey",
+        green: "bg-green text-white hover:bg-gold hover:text-green",
         outline:
           "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
