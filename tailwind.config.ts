@@ -18,6 +18,7 @@ const config: Config = {
         lightGrey: "#F5F5F5",
         darkGrey: "#303030",
         mediumGrey: "#565656",
+        semiMediumGrey: "#A2A2A2",
         red: "#B30000",
 
         background: "hsl(var(--background))",
@@ -98,9 +99,10 @@ const config: Config = {
         ".header_4": {
           fontFamily: "MoniqaNarrowParagraph",
           fontWeight: "400",
-          fontSize: "clamp(1.5rem, 2vw, 2rem)",
+          fontSize: "clamp(2rem, 4vw, 4rem)",
           lineHeight: "100%",
           color: theme("colors.darkGrey"),
+          textTransform: "uppercase",
         },
         ".card_text": {
           fontFamily: "FuturaPTBook",

@@ -18,11 +18,13 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         icon: "text-primary",
         rounded: "text-white border border-white hover:bg-gold rounded-full",
+        roundedGreen:
+          "text-green border border-green hover:bg-green hover:text-white rounded-full",
         underlined: "link",
       },
       size: {
         default: "h-[47px] sm:h-[69px] px-[80px] py-[24px]",
-        small: "h-[49px] px-[60px] py-[14px]",
+        small: "h-[39px] sm:h-[49px] px-[60px] py-[14px]",
         lg: "h-11 px-8",
         icon: "h-10 w-10",
       },

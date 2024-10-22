@@ -12,3 +12,16 @@ export {
 } from "./form";
 export { Input } from "./input";
 export { Checkbox } from "./checkbox";
+export {
+  Sheet,
+  SheetPortal,
+  SheetOverlay,
+  SheetTrigger,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetFooter,
+  SheetTitle,
+  SheetDescription,
+} from "./sheet";
+export { Separator } from "./separator";

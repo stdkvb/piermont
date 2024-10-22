@@ -18,7 +18,7 @@ import data from "../public/data.json";
 export default function Home() {
   return (
     <>
-      {/* <MainSlider />
+      <MainSlider />
       <Parallax>
         <Residence />
       </Parallax>
@@ -90,7 +90,7 @@ export default function Home() {
             className="w-full h-full object-cover"
           />
         </div>
-      </section> */}
+      </section>
       <Excursion />
       <Presentation />
     </>
