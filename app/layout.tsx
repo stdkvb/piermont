@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.scss";
 
-import { Header, Footer } from "@/components/shared";
+import { Header, Footer, Modal } from "@/components/shared";
 
 export const metadata: Metadata = {
   title: "ЖК Пьермонт",
@@ -21,6 +21,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1 bg-lightGrey">{children}</main>
         <Footer />
+        <Modal />
       </body>
     </html>
   );

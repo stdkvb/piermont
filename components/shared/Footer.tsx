@@ -1,10 +1,12 @@
+"use client";
 import Link from "next/link";
+import { useModalStore } from "@/store/modal";
+import { CallBackForm } from "./CallBackForm";
 
-import { Button, Logo } from "@/components/ui";
+import { Logo } from "@/components/ui";
 
-type Props = {};
-
-export const Footer = (props: Props) => {
+export const Footer = () => {
+  const { openModal } = useModalStore();
   return (
     <footer className="container py-12 md:pt-[100px] md:pb-[60px] bg-green flex flex-col items-center gap-8">
       <div className="flex flex-col gap-8 sm:flex-row sm:justify-between sm:w-full">
@@ -16,7 +18,10 @@ export const Footer = (props: Props) => {
           >
             +7 347 200-00-00
           </Link>
-          <div className="block text-white link cursor-pointer">
+          <div
+            className="block text-white link cursor-pointer"
+            onClick={() => openModal(<CallBackForm />)}
+          >
             Заказать звонок
           </div>
         </div>

@@ -11,6 +11,8 @@ import {
 } from "../ui";
 
 import { Header } from "./Header";
+import { useModalStore } from "@/store/modal";
+import { PresentationForm } from "./PresentationForm";
 
 interface MenuProps {
   inversion?: boolean;
@@ -64,6 +66,7 @@ const menu = [
 
 export const Menu: React.FC<MenuProps> = ({ inversion }) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const { openModal } = useModalStore();
   return (
     <Sheet>
       {!inversion ? (
@@ -246,7 +249,12 @@ export const Menu: React.FC<MenuProps> = ({ inversion }) => {
                 <br />
                 Получите презентацию проекта
               </p>
-              <Button variant="green" size="small" className="max-w-[350px]">
+              <Button
+                variant="green"
+                size="small"
+                className="max-w-[350px]"
+                onClick={() => openModal(<PresentationForm />)}
+              >
                 Получить презентацию
               </Button>
             </div>

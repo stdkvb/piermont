@@ -53,17 +53,17 @@ export const Panorama: React.FC = () => {
             className="h-full w-full object-cover min-h-[720px] max-h-[948px]"
           />
         </motion.div>
-        <div className="absolute container mx-6 top-[270px] flex justify-between w-[200%] min-w-[2518px]">
+        <div className="absolute container mx-6 top-[270px] flex w-[200%] min-w-[2518px]">
           <div className="h-[297px] relative w-[2px] bg-gold  before:content-[''] before:w-[6px] before:h-[6px] before:bg-gold before:rounded-full before:absolute before:top-0 before:left-1/2 before:translate-x-[-50%]">
             <span className="body_base absolute left-[50%] translate-x-[-50%] bottom-[100%] mb-[12px]">
               Выезд
             </span>
           </div>
-          <div className="h-[297px] relative w-[2px] bg-gold  before:content-[''] before:w-[6px] before:h-[6px] before:bg-gold before:rounded-full before:absolute before:top-0 before:left-1/2 before:translate-x-[-50%]">
+          {/* <div className="h-[297px] relative w-[2px] bg-gold  before:content-[''] before:w-[6px] before:h-[6px] before:bg-gold before:rounded-full before:absolute before:top-0 before:left-1/2 before:translate-x-[-50%]">
             <span className="body_base absolute left-[50%] translate-x-[-50%] bottom-[100%] mb-[12px]">
               Лодочный причал
             </span>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="container absolute top-[48px] flex flex-col gap-[24px] sm:flex-row justify-between">

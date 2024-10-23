@@ -12,4 +12,5 @@ export { ApartmentCard } from "./ApartmentCard";
 export { Presentation } from "./Presentation";
 export { Excursion } from "./Excursion";
 export { Menu } from "./Menu";
-export { PresentationModal } from "./PresentationModal";
+export { Modal } from "./Modal";
+export { PresentationForm } from "./PresentationForm";

@@ -24,4 +24,16 @@ export {
   SheetTitle,
   SheetDescription,
 } from "./sheet";
+export {
+  Drawer,
+  DrawerPortal,
+  DrawerOverlay,
+  DrawerTrigger,
+  DrawerClose,
+  DrawerContent,
+  DrawerHeader,
+  DrawerFooter,
+  DrawerTitle,
+  DrawerDescription,
+} from "./drawer";
 export { Separator } from "./separator";
