@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Swiper as SwiperType } from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -23,7 +23,6 @@ interface SliderProps {
 
 export const Slider: React.FC<SliderProps> = ({ data }) => {
   const sliderRef = useRef<SwiperType | null>(null);
-  const paginationRef = useRef(null);
 
   const [isPrevHovered, setIsPrevHovered] = useState(false);
   const [isNextHovered, setIsNextHovered] = useState(false);
@@ -36,21 +35,18 @@ export const Slider: React.FC<SliderProps> = ({ data }) => {
           dangerouslySetInnerHTML={{ __html: data.title }}
         ></h2>
       </div>
-      <div className="px-4 sm:pl-[2.125rem] sm:pr-0 md:pl-[2.125rem] lg:pl-0">
+      <div className="px-4 sm:pl-[2.125rem] sm:pr-0 md:pl-[2.125rem] lg:pl-0 w-full">
         <Swiper
           pagination={{
             type: "fraction",
-            el: paginationRef.current,
+            el: `.pagination${data.id}`,
           }}
           spaceBetween="20"
-          breakpoints={{
-            640: {
-              slidesPerView: "auto",
-            },
-          }}
+          slidesPerView={"auto"}
           modules={[Navigation, Pagination]}
           onBeforeInit={(swiper) => {
             sliderRef.current = swiper;
+            sliderRef.current.pagination.update();
           }}
           className="w-full"
         >
@@ -123,10 +119,7 @@ export const Slider: React.FC<SliderProps> = ({ data }) => {
             </svg>
           </div>
         </button>
-        <div
-          ref={paginationRef}
-          className={`.pagination${data.id} header_3 min-w-[40px]`}
-        ></div>
+        <div className={`pagination${data.id} header_3 min-w-[40px]`}></div>
         <button
           onClick={() => sliderRef.current?.slideNext()}
           className="w-[42px] h-[42px] sm:w-[56px] sm:h-[56px]"

@@ -85,9 +85,9 @@ export const UniqueFormats = () => {
         </div>
         <div
           ref={(el) => (contentRefs.current[2] = el!)}
-          className="container h-full flex flex-col items-center justify-between gap-[24px] md:gap-[40px] w-screen flex-shrink-0 py-[32px] md:py-[100px] 2xl:py-[140px] md:w-[820px]"
+          className="container h-full flex flex-col items-center justify-between gap-[24px] md:gap-[40px] w-screen flex-shrink-0 py-[32px] md:py-[70px] 2xl:py-[100px] md:w-[820px]"
         >
-          <img src="/images/plan1.png" alt="plan" />
+          <img src="/images/plan1.png" alt="plan" className="max-h-[350px]" />
           <p className="header_4 text-gold uppercase">
             Двухуровневый пентхаус с патио
           </p>
@@ -108,7 +108,7 @@ export const UniqueFormats = () => {
 
         <div
           ref={(el) => (contentRefs.current[3] = el!)}
-          className="flex h-full w-screen flex-shrink-0 py-[32px] md:py-[100px] 2xl:py-[140px] md:w-[960px]"
+          className="flex h-full w-screen flex-shrink-0 py-[32px] md:py-[70px] 2xl:py-[100px] md:w-[960px]"
           style={{
             background:
               "linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url('/images/room.png') center center / cover scroll no-repeat",

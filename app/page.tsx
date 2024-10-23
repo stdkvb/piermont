@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Button } from "@/components/ui";
 import {
   MainSlider,
@@ -12,7 +11,7 @@ import {
   Presentation,
   Excursion,
 } from "@/components/shared";
-import { Parallax } from "@/components/ui/ParallaxProvider";
+import { Parallax } from "@/components/shared/ParallaxProvider";
 import data from "../public/data.json";
 
 export default function Home() {
