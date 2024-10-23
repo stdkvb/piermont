@@ -46,7 +46,7 @@ export const Apartments = (props: Props) => {
   return (
     <section className="container py-[100px] flex flex-col gap-[32px] sm:gap-[64px]">
       <h2 className="header_2 text-gold">Выбрать квартиру</h2>
-      <div className="flex flex-col gap-[20px] lg:flex-row">
+      <div className="flex flex-col gap-[20px] md:grid grid-cols-2 lg:flex lg:flex-row">
         {apartments.map((apartment) => {
           return <ApartmentCard data={apartment} key={apartment.id} />;
         })}

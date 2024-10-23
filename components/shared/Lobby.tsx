@@ -6,11 +6,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-type Props = {};
-
-export const Lobby = (props: Props) => {
+export const Lobby = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const h2Refs = useRef<HTMLHeadingElement[]>([]);
+  const h2Refs = useRef<(HTMLHeadingElement | null)[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -39,26 +37,29 @@ export const Lobby = (props: Props) => {
       headers.forEach((header, index) => {
         const startPercentages = [0.25, 0.75, 1];
 
-        gsap.fromTo(
-          header,
-          { opacity: 0, y: 150 },
-          {
-            opacity: 1,
-            y: 0,
-            ease: "none",
-            scrollTrigger: {
-              trigger: section,
-              start: `top+=${sectionHeight * startPercentages[index]} bottom`,
-              scrub: true,
-              markers: false,
-            },
-          }
-        );
+        if (header) {
+          gsap.fromTo(
+            header,
+            { opacity: 0, y: 150 },
+            {
+              opacity: 1,
+              y: 0,
+              ease: "none",
+              scrollTrigger: {
+                trigger: section,
+                start: `top+=${sectionHeight * startPercentages[index]} bottom`,
+                scrub: true,
+                markers: false,
+              },
+            }
+          );
+        }
       });
 
       return () => {
         firstHeaderTrigger.kill();
         lastHeaderTrigger.kill();
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       };
     }
   }, []);
@@ -74,19 +75,25 @@ export const Lobby = (props: Props) => {
     >
       <div ref={containerRef} className="container flex flex-col justify-end">
         <h2
-          ref={(el) => (h2Refs.current[0] = el!)}
+          ref={(el) => {
+            h2Refs.current[0] = el;
+          }}
           className="header_1 md:text-[200px] text-white mb-[12px] sm:mb-[48px]"
         >
           Трехуровневые
         </h2>
         <h2
-          ref={(el) => (h2Refs.current[1] = el!)}
+          ref={(el) => {
+            h2Refs.current[1] = el;
+          }}
           className="header_1 md:text-[200px] text-white mb-[12px] sm:mb-[48px]"
         >
           премиальные
         </h2>
         <h2
-          ref={(el) => (h2Refs.current[2] = el!)}
+          ref={(el) => {
+            h2Refs.current[2] = el;
+          }}
           className="header_1 md:text-[200px] text-white"
         >
           лобби

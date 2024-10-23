@@ -29,8 +29,8 @@ const formSchema = z.object({
   email: z.string().email({
     message: "Введите корректный email",
   }),
-  terms: z.literal(true, {
-    errorMap: () => ({ message: "Согласие обязательно" }),
+  terms: z.boolean().refine((val) => val === true, {
+    message: "Согласие обязательно",
   }),
 });
 
@@ -90,12 +90,7 @@ export const Excursion = () => {
                         value={field.value}
                         onChange={field.onChange}
                       >
-                        {(inputProps: any) => (
-                          <Input
-                            {...inputProps}
-                            placeholder="+7 (000) 000-00-00"
-                          />
-                        )}
+                        <Input placeholder="+7 (000) 000-00-00" />
                       </InputMask>
                     </FormControl>
                   </div>

@@ -29,14 +29,12 @@ const formSchema = z.object({
   email: z.string().email({
     message: "Введите корректный email",
   }),
-  terms: z.literal(true, {
-    errorMap: () => ({ message: "Согласие обязательно" }),
+  terms: z.boolean().refine((val) => val === true, {
+    message: "Согласие обязательно",
   }),
 });
 
-type Props = {};
-
-export const PresentationForm = (props: Props) => {
+export const PresentationForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -86,12 +84,7 @@ export const PresentationForm = (props: Props) => {
                       value={field.value}
                       onChange={field.onChange}
                     >
-                      {(inputProps: any) => (
-                        <Input
-                          {...inputProps}
-                          placeholder="+7 (000) 000-00-00"
-                        />
-                      )}
+                      <Input placeholder="+7 (000) 000-00-00" />
                     </InputMask>
                   </FormControl>
                 </div>

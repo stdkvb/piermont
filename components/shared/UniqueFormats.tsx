@@ -63,7 +63,9 @@ export const UniqueFormats = () => {
         style={{ width: "auto" }}
       >
         <div
-          ref={(el) => (contentRefs.current[0] = el!)}
+          ref={(el) => {
+            if (el) contentRefs.current[0] = el;
+          }}
           className="container h-full w-screen flex-shrink-0 flex flex-col justify-center md:w-[820px]"
         >
           <h2 className="header_2 text-gold">
@@ -74,7 +76,9 @@ export const UniqueFormats = () => {
           </h2>
         </div>
         <div
-          ref={(el) => (contentRefs.current[1] = el!)}
+          ref={(el) => {
+            if (el) contentRefs.current[1] = el;
+          }}
           className="w-screen h-full flex-shrink-0 md:w-[960px]"
         >
           <img
@@ -84,7 +88,9 @@ export const UniqueFormats = () => {
           />
         </div>
         <div
-          ref={(el) => (contentRefs.current[2] = el!)}
+          ref={(el) => {
+            if (el) contentRefs.current[2] = el;
+          }}
           className="container h-full flex flex-col items-center justify-between gap-[24px] md:gap-[40px] w-screen flex-shrink-0 py-[32px] md:py-[70px] 2xl:py-[100px] md:w-[820px]"
         >
           <img src="/images/plan1.png" alt="plan" className="max-h-[350px]" />
@@ -107,7 +113,9 @@ export const UniqueFormats = () => {
         </div>
 
         <div
-          ref={(el) => (contentRefs.current[3] = el!)}
+          ref={(el) => {
+            if (el) contentRefs.current[3] = el;
+          }}
           className="flex h-full w-screen flex-shrink-0 py-[32px] md:py-[70px] 2xl:py-[100px] md:w-[960px]"
           style={{
             background:

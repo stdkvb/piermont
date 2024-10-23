@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import React, { useRef } from "react";
 import { Swiper as SwiperType } from "swiper";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -120,18 +120,21 @@ export const MainSlider = () => {
           >
             <svg
               viewBox="0 0 56 56"
-              ref={progressCircle}
               className="absolute left-0 top-0 z-10 w-full h-full transform -rotate-90"
-              style={{
-                "--progress": 0,
-                strokeWidth: 2,
-                stroke: "white",
-                fill: "none",
-                strokeDashoffset: `calc(163.36px * (1 - var(--progress)))`,
-                strokeDasharray: 163.36,
-              }}
             >
-              <circle cx="28" cy="28" r="26"></circle>
+              <circle
+                ref={progressCircle}
+                cx="28"
+                cy="28"
+                r="26"
+                style={{
+                  strokeWidth: 2,
+                  stroke: "white",
+                  fill: "none",
+                  strokeDashoffset: `calc(163.36px * (1 - var(--progress)))`,
+                  strokeDasharray: 163.36,
+                }}
+              />
             </svg>
           </div>
         </button>

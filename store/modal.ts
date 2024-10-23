@@ -1,14 +1,14 @@
-import { create, SetState } from "zustand";
+import { create } from "zustand";
 import { ReactNode } from "react";
 
 interface State {
   active: boolean;
-  modalContent: ReactNode;
+  modalContent: ReactNode | null;
   openModal: (content: ReactNode) => void;
   closeModal: () => void;
 }
 
-export const useModalStore = create<State>()((set: SetState<State>) => ({
+export const useModalStore = create<State>((set) => ({
   active: false,
   modalContent: null,
   openModal: (content: ReactNode) =>
