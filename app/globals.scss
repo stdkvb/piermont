@@ -144,3 +144,7 @@ input[type="search"] {
 .card__back {
   transform: rotateY(0.5turn);
 }
+
+.grecaptcha-badge {
+  display: none !important;
+}

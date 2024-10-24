@@ -31,7 +31,6 @@ const formSchema = z.object({
 });
 
 export const Excursion = () => {
-  const { executeRecaptcha } = useGoogleReCaptcha();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -42,6 +41,7 @@ export const Excursion = () => {
     },
   });
 
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
@@ -55,7 +55,7 @@ export const Excursion = () => {
         throw new Error("reCAPTCHA не загружена");
       }
 
-      const recaptchaToken = await executeRecaptcha("excursion_form");
+      const recaptchaToken = await executeRecaptcha();
       if (!recaptchaToken) {
         throw new Error("Не удалось получить reCAPTCHA токен");
       }

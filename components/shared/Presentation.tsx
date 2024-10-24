@@ -2,6 +2,7 @@
 import { Button } from "../ui";
 import { useModalStore } from "@/store/modal";
 import { PresentationForm } from "./PresentationForm";
+import { RecaptchaProvider } from "./RecaptchaProvider";
 
 type Props = {};
 
@@ -17,7 +18,13 @@ export const Presentation = (props: Props) => {
       <Button
         variant="black"
         size="small"
-        onClick={() => openModal(<PresentationForm />)}
+        onClick={() =>
+          openModal(
+            <RecaptchaProvider>
+              <PresentationForm />
+            </RecaptchaProvider>
+          )
+        }
       >
         Получить презентацию
       </Button>

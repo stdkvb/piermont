@@ -1001,6 +1001,9 @@ body {
 .max-w-\[934px\] {
   max-width: 934px;
 }
+.\!max-w-\[600px\] {
+  max-width: 600px !important;
+}
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -1533,6 +1536,10 @@ input[type=search] {
   transform: rotateY(0.5turn);
 }
 
+.grecaptcha-badge {
+  display: none !important;
+}
+
 .file\:border-0::file-selector-button {
   border-width: 0px;
 }
@@ -1829,6 +1836,9 @@ input[type=search] {
   .sm\:h-full {
     height: 100%;
   }
+  .sm\:max-h-\[424px\] {
+    max-height: 424px;
+  }
   .sm\:min-h-\[1453px\] {
     min-height: 1453px;
   }
@@ -1877,6 +1887,9 @@ input[type=search] {
   .sm\:items-end {
     align-items: flex-end;
   }
+  .sm\:items-center {
+    align-items: center;
+  }
   .sm\:justify-end {
     justify-content: flex-end;
   }
@@ -1924,6 +1937,9 @@ input[type=search] {
   }
   .sm\:text-left {
     text-align: left;
+  }
+  .sm\:text-center {
+    text-align: center;
   }
 }
 
