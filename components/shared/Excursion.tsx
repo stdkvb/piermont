@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import axios from "axios";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -6,7 +7,6 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import InputMask from "react-input-mask";
 import { Loader2 } from "lucide-react";
-
 import {
   Button,
   Form,
@@ -17,26 +17,21 @@ import {
   FormMessage,
   Checkbox,
 } from "@/components/ui";
-
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 const formSchema = z.object({
-  username: z.string().min(1, {
-    message: "Обязательное поле",
-  }),
-  phone: z.string().min(18, {
-    message: "Введите корректный номер телефона",
-  }),
-  email: z.string().email({
-    message: "Введите корректный email",
-  }),
-  terms: z.boolean().refine((val) => val === true, {
-    message: "Согласие обязательно",
-  }),
+  username: z.string().min(1, { message: "Обязательное поле" }),
+  phone: z.string().min(18, { message: "Введите корректный номер телефона" }),
+  email: z.string().email({ message: "Введите корректный email" }),
+  terms: z
+    .boolean()
+    .refine((val) => val === true, { message: "Согласие обязательно" }),
 });
 
 export const Excursion = () => {
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -51,14 +46,26 @@ export const Excursion = () => {
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
+  const onSubmit = async (values: any) => {
     setLoading(true);
     setError(null);
 
     try {
+      if (!executeRecaptcha) {
+        throw new Error("reCAPTCHA не загружена");
+      }
+
+      const recaptchaToken = await executeRecaptcha("excursion_form");
+      if (!recaptchaToken) {
+        throw new Error("Не удалось получить reCAPTCHA токен");
+      }
+
       const response = await axios.post(
         "https://art-city.wptt.ru/api/form/excursion",
-        values
+        {
+          ...values,
+          g_recaptcha_response: recaptchaToken,
+        }
       );
 
       if (response.status === 200) {
@@ -71,7 +78,8 @@ export const Excursion = () => {
     } finally {
       setLoading(false);
     }
-  }
+  };
+
   return (
     <section className="container bg-white py-[64px] sm:py-[120px] flex flex-col gap-[64px] md:flex-row md:justify-between">
       <div className="max-w-[657px]">
@@ -137,7 +145,7 @@ export const Excursion = () => {
               )}
             />
 
-            <div className="flex flex-col gap-[24px] items-start xl:flex-row xl:justify-between xl:items-end">
+            <div className="flex flex-col gap-[24px] items-start lg:flex-row lg:justify-between lg:items-end">
               <FormField
                 control={form.control}
                 name="terms"
@@ -167,7 +175,7 @@ export const Excursion = () => {
                 variant="green"
                 size="small"
                 type="submit"
-                className="w-full !max-w-[584px]"
+                className="w-full md:!max-w-[584px]"
               >
                 {loading ? (
                   <Loader2 className="h-6 w-6 animate-spin" />

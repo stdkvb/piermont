@@ -10,17 +10,19 @@ import {
   Apartments,
   Presentation,
   Excursion,
+  Backyard,
+  RecaptchaProvider,
+  ParallaxProvider,
 } from "@/components/shared";
-import { Parallax } from "@/components/shared/ParallaxProvider";
 import data from "../public/data.json";
 
 export default function Home() {
   return (
     <>
       <MainSlider />
-      <Parallax>
+      <ParallaxProvider>
         <Residence />
-      </Parallax>
+      </ParallaxProvider>
       <Slider data={data.firstSlider} />
       <Panorama />
       <section className="container py-[64px] md:py-[160px] xl:py-[120px] flex flex-col gap-[24px] xl:flex-row xl:gap-[84px]">
@@ -42,26 +44,9 @@ export default function Home() {
       </section>
       <Slider data={data.secondSlider} />
       <Details />
-      <section
-        className="h-screen max-h-[1080px] flex flex-col justify-end pb-[32px] md:pb-[64px]"
-        style={{
-          background:
-            "linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url('images/backyard.jpeg') center center / cover scroll no-repeat",
-        }}
-      >
-        <div className="container flex flex-col gap-[48px] md:flex-row md:justify-between lg:gap-[164px] md:items-end">
-          <h2 className="header_2 text-white">Двор&nbsp;мечты</h2>
-          <p className="body_base text-white">
-            Закрытый террасированный двор-парк — настоящее чудо света.
-            Он разделён на множество зон, как для игр детей разного возраста,
-            так и на зоны тихого отдыха и даже зоны для интеллектуальных игр.
-            Но самое главное он расположен на разных уровнях с мостиками,
-            плавными линиями тропинок и арт-объектами создающими ощущение
-            слияния с природой, приватности и гармонии.
-          </p>
-          <Button variant="gold">узнать подробнее</Button>
-        </div>
-      </section>
+      <ParallaxProvider>
+        <Backyard />
+      </ParallaxProvider>
       <UniqueFormats />
       <Lobby />
       <Slider data={data.fourthSlider} />
@@ -90,7 +75,10 @@ export default function Home() {
           />
         </div>
       </section>
-      <Excursion />
+      <RecaptchaProvider>
+        <Excursion />
+      </RecaptchaProvider>
+
       <Presentation />
     </>
   );

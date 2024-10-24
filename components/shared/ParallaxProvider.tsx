@@ -1,10 +1,10 @@
 "use client";
-import { ParallaxProvider } from "react-scroll-parallax";
+import { ParallaxProvider as Parallax } from "react-scroll-parallax";
 
-export const Parallax = ({
+export const ParallaxProvider = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
-  return <ParallaxProvider>{children}</ParallaxProvider>;
+  return <Parallax>{children}</Parallax>;
 };

@@ -672,6 +672,9 @@ body {
 .bottom-\[100\%\] {
   bottom: 100%;
 }
+.bottom-\[120px\] {
+  bottom: 120px;
+}
 .bottom-\[32px\] {
   bottom: 32px;
 }
@@ -761,9 +764,6 @@ body {
 .mt-auto {
   margin-top: auto;
 }
-.mr-2 {
-  margin-right: 0.5rem;
-}
 .block {
   display: block;
 }
@@ -781,6 +781,9 @@ body {
 }
 .hidden {
   display: none;
+}
+.aspect-\[1100\/2200\] {
+  aspect-ratio: 1100/2200;
 }
 .aspect-\[2455\/4995\] {
   aspect-ratio: 2455/4995;
@@ -800,6 +803,9 @@ body {
 .h-4 {
   height: 1rem;
 }
+.h-6 {
+  height: 1.5rem;
+}
 .h-\[102px\] {
   height: 102px;
 }
@@ -811,6 +817,9 @@ body {
 }
 .h-\[2px\] {
   height: 2px;
+}
+.h-\[300px\] {
+  height: 300px;
 }
 .h-\[36px\] {
   height: 36px;
@@ -844,12 +853,6 @@ body {
 }
 .h-screen {
   height: 100vh;
-}
-.h-8 {
-  height: 2rem;
-}
-.h-6 {
-  height: 1.5rem;
 }
 .max-h-\[1080px\] {
   max-height: 1080px;
@@ -908,6 +911,9 @@ body {
 .w-4 {
   width: 1rem;
 }
+.w-6 {
+  width: 1.5rem;
+}
 .w-\[100px\] {
   width: 100px;
 }
@@ -935,6 +941,9 @@ body {
 .w-\[42px\] {
   width: 42px;
 }
+.w-\[95\%\] {
+  width: 95%;
+}
 .w-fit {
   width: fit-content;
 }
@@ -944,26 +953,11 @@ body {
 .w-screen {
   width: 100vw;
 }
-.w-\[90\%\] {
-  width: 90%;
-}
-.w-\[95\%\] {
-  width: 95%;
-}
-.w-8 {
-  width: 2rem;
-}
-.w-6 {
-  width: 1.5rem;
-}
 .min-w-60 {
   min-width: 15rem;
 }
 .min-w-\[240px\] {
   min-width: 240px;
-}
-.min-w-\[2518px\] {
-  min-width: 2518px;
 }
 .min-w-\[40px\] {
   min-width: 40px;
@@ -1051,9 +1045,6 @@ body {
 }
 .grid-cols-\[1fr_auto\] {
   grid-template-columns: 1fr auto;
-}
-.grid-rows-2 {
-  grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 .grid-rows-\[max-content_max-content\] {
   grid-template-rows: max-content max-content;
@@ -1169,6 +1160,9 @@ body {
 .rounded {
   border-radius: 0.25rem;
 }
+.rounded-\[10px\] {
+  border-radius: 10px;
+}
 .rounded-\[4px\] {
   border-radius: 4px;
 }
@@ -1180,9 +1174,6 @@ body {
 }
 .rounded-sm {
   border-radius: calc(var(--radius) - 4px);
-}
-.rounded-\[10px\] {
-  border-radius: 10px;
 }
 .border {
   border-width: 1px;
@@ -1257,10 +1248,6 @@ body {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
 .fill-\[\#343330\] {
   fill: #343330;
 }
@@ -1278,9 +1265,6 @@ body {
 }
 .p-6 {
   padding: 1.5rem;
-}
-.p-\[48px\] {
-  padding: 48px;
 }
 .p-\[36px\] {
   padding: 36px;
@@ -1349,9 +1333,6 @@ body {
   padding-top: 64px;
   padding-bottom: 64px;
 }
-.pb-\[32px\] {
-  padding-bottom: 32px;
-}
 .pb-\[64px\] {
   padding-bottom: 64px;
 }
@@ -1419,6 +1400,10 @@ body {
 .text-primary {
   color: hsl(var(--primary));
 }
+.text-red {
+  --tw-text-opacity: 1;
+  color: rgb(179 0 0 / var(--tw-text-opacity));
+}
 .text-semiMediumGrey {
   --tw-text-opacity: 1;
   color: rgb(162 162 162 / var(--tw-text-opacity));
@@ -1426,10 +1411,6 @@ body {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-.text-red {
-  --tw-text-opacity: 1;
-  color: rgb(179 0 0 / var(--tw-text-opacity));
 }
 .underline {
   text-decoration-line: underline;
@@ -1818,9 +1799,6 @@ input[type=search] {
   .sm\:right-\[64px\] {
     right: 64px;
   }
-  .sm\:top-\[48px\] {
-    top: 48px;
-  }
   .sm\:col-span-2 {
     grid-column: span 2 / span 2;
   }
@@ -2001,6 +1979,9 @@ input[type=search] {
   .md\:min-w-\[320px\] {
     min-width: 320px;
   }
+  .md\:\!max-w-\[584px\] {
+    max-width: 584px !important;
+  }
   .md\:max-w-\[580px\] {
     max-width: 580px;
   }
@@ -2045,9 +2026,6 @@ input[type=search] {
   }
   .md\:pb-\[60px\] {
     padding-bottom: 60px;
-  }
-  .md\:pb-\[64px\] {
-    padding-bottom: 64px;
   }
   .md\:pl-\[2\.125rem\] {
     padding-left: 2.125rem;
@@ -2169,9 +2147,6 @@ input[type=search] {
   .lg\:gap-0 {
     gap: 0px;
   }
-  .lg\:gap-\[164px\] {
-    gap: 164px;
-  }
   .lg\:gap-\[204px\] {
     gap: 204px;
   }
@@ -2217,17 +2192,14 @@ input[type=search] {
   .xl\:flex-row {
     flex-direction: row;
   }
-  .xl\:items-end {
-    align-items: flex-end;
-  }
   .xl\:justify-end {
     justify-content: flex-end;
   }
-  .xl\:justify-between {
-    justify-content: space-between;
-  }
   .xl\:gap-0 {
     gap: 0px;
+  }
+  .xl\:gap-\[164px\] {
+    gap: 164px;
   }
   .xl\:gap-\[84px\] {
     gap: 84px;

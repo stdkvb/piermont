@@ -14,3 +14,6 @@ export { Excursion } from "./Excursion";
 export { Menu } from "./Menu";
 export { Modal } from "./Modal";
 export { PresentationForm } from "./PresentationForm";
+export { Backyard } from "./Backyard";
+export { ParallaxProvider } from "./ParallaxProvider";
+export { RecaptchaProvider } from "./RecaptchaProvider";
