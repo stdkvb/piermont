@@ -8,13 +8,13 @@ import { Logo } from "@/components/ui";
 export const Footer = () => {
   const { openModal } = useModalStore();
   return (
-    <footer className="container py-12 md:pt-[100px] md:pb-[60px] bg-green flex flex-col items-center gap-8">
-      <div className="flex flex-col gap-8 sm:flex-row sm:justify-between sm:w-full">
+    <footer className="container py-12 md:pt-[100px] md:pb-[60px] bg-green flex flex-col items-center gap-[32px] md:gap-[64px]">
+      <div className="flex flex-col items-center gap-[13px] sm:gap-[24px] sm:flex-row sm:justify-between sm:w-full">
         <Logo color="#B9916A" large={true} />
-        <div className="flex flex-col items-center gap-3 sm:items-end">
+        <div className="flex flex-col items-center gap-[12px] sm:gap-[24px] sm:items-end">
           <Link
             href="tel:+7 347 200-00-00"
-            className="block text-white card_text"
+            className="block text-white card_text text-[32px] sm:text-[28px]"
           >
             +7 347 200-00-00
           </Link>
@@ -27,7 +27,7 @@ export const Footer = () => {
         </div>
       </div>
       <div className="flex flex-col gap-8 sm:gap-16 md:w-full lg:flex-row lg:items-center lg:justify-between">
-        <nav className="flex flex-col gap-8 items-center sm:items-start md:flex-1">
+        <nav className="flex flex-col gap-[32px] items-center sm:items-start md:flex-1">
           <Link href="#" className="card_text text-white">
             Главная
           </Link>
@@ -41,7 +41,7 @@ export const Footer = () => {
             Контакты
           </Link>
         </nav>
-        <div className="flex flex-col gap-2 items-center sm:items-start md:max-w-[580px] lg:items-end">
+        <div className="flex flex-col gap-[8px] items-center sm:items-start md:max-w-[580px] lg:items-end">
           <span className="body_base text-white">
             © 2011–2023, Строительная компания HART
           </span>

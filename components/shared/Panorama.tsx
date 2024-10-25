@@ -7,6 +7,9 @@ export const Panorama: React.FC = () => {
   const [isHovering, setIsHovering] = useState(false);
   const [containerWidth, setContainerWidth] = useState(0);
   const [panoramaWidth, setPanoramaWidth] = useState(0);
+  const [targetScrollLeft, setTargetScrollLeft] = useState(0);
+  const [currentScrollLeft, setCurrentScrollLeft] = useState(0);
+  const [scrolling, setScrolling] = useState(false);
 
   useEffect(() => {
     if (panoramaRef.current) {
@@ -15,6 +18,7 @@ export const Panorama: React.FC = () => {
       setPanoramaWidth(panorama.scrollWidth);
 
       panorama.scrollLeft = (panorama.scrollWidth - panorama.clientWidth) / 2;
+      setCurrentScrollLeft(panorama.scrollLeft);
     }
   }, []);
 
@@ -26,18 +30,57 @@ export const Panorama: React.FC = () => {
       const relativeX = clientX / containerWidth;
       const maxScrollLeft = panoramaWidth - containerWidth;
 
-      panoramaRef.current.scrollLeft = relativeX * maxScrollLeft;
+      const newTargetScrollLeft = relativeX * maxScrollLeft;
+      setTargetScrollLeft(newTargetScrollLeft);
+      setScrolling(true);
     };
 
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [isHovering, containerWidth, panoramaWidth]);
 
+  useEffect(() => {
+    const smoothScroll = () => {
+      if (!panoramaRef.current) return;
+
+      const panorama = panoramaRef.current;
+      const maxScrollLeft = panoramaWidth - containerWidth;
+
+      const scrollDiff = targetScrollLeft - currentScrollLeft;
+
+      if (Math.abs(scrollDiff) > 0.5) {
+        const newScrollLeft = currentScrollLeft + scrollDiff * 0.05;
+        panorama.scrollLeft = Math.min(
+          Math.max(newScrollLeft, 0),
+          maxScrollLeft
+        );
+        setCurrentScrollLeft(panorama.scrollLeft);
+
+        requestAnimationFrame(smoothScroll);
+      } else {
+        setScrolling(false);
+      }
+    };
+
+    if (scrolling) {
+      requestAnimationFrame(smoothScroll);
+    }
+  }, [
+    scrolling,
+    targetScrollLeft,
+    currentScrollLeft,
+    panoramaWidth,
+    containerWidth,
+  ]);
+
   return (
     <section
-      className="relative w-full overflow-hidden "
+      className="relative w-full overflow-hidden"
       onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => setIsHovering(false)}
+      onMouseLeave={() => {
+        setIsHovering(false);
+        setScrolling(false);
+      }}
     >
       <div
         ref={panoramaRef}
@@ -54,16 +97,11 @@ export const Panorama: React.FC = () => {
           />
         </motion.div>
         <div className="absolute container mx-6 top-[270px] flex w-[200%]">
-          <div className="h-[297px] relative w-[2px] bg-gold  before:content-[''] before:w-[6px] before:h-[6px] before:bg-gold before:rounded-full before:absolute before:top-0 before:left-1/2 before:translate-x-[-50%]">
+          <div className="h-[297px] relative w-[2px] bg-gold before:content-[''] before:w-[6px] before:h-[6px] before:bg-gold before:rounded-full before:absolute before:top-0 before:left-1/2 before:translate-x-[-50%]">
             <span className="body_base absolute left-[50%] translate-x-[-50%] bottom-[100%] mb-[12px]">
               Выезд
             </span>
           </div>
-          {/* <div className="h-[297px] relative w-[2px] bg-gold  before:content-[''] before:w-[6px] before:h-[6px] before:bg-gold before:rounded-full before:absolute before:top-0 before:left-1/2 before:translate-x-[-50%]">
-            <span className="body_base absolute left-[50%] translate-x-[-50%] bottom-[100%] mb-[12px]">
-              Лодочный причал
-            </span>
-          </div> */}
         </div>
       </div>
       <div className="container absolute top-[48px] flex flex-col gap-[24px] sm:flex-row justify-between">

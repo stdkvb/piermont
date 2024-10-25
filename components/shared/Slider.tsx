@@ -29,9 +29,9 @@ export const Slider: React.FC<SliderProps> = ({ data }) => {
 
   return (
     <section className=" w-full py-12 md:py-[160px] flex flex-col gap-8 md:gap-16 lg:flex-row lg:relative lg:gap-0">
-      <div className="container max-w-[640px]">
+      <div className="container max-w-[640px] w-full">
         <h2
-          className="header_2 text-gold md:w-[584px]"
+          className="header_2 text-gold "
           dangerouslySetInnerHTML={{ __html: data.title }}
         ></h2>
       </div>
@@ -53,7 +53,7 @@ export const Slider: React.FC<SliderProps> = ({ data }) => {
           {data.slides.map(({ id, image, title }) => (
             <SwiperSlide key={id} className="max-w-[434px]">
               <div
-                className="h-[397px] md:h-[538px] w-full mb-8 "
+                className="h-[397px] md:h-[538px] w-full mb-[12px] md:mb-[32px] "
                 style={{
                   background: `url(${image}) center center / cover scroll no-repeat`,
                 }}

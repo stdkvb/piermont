@@ -67,18 +67,17 @@ export default function Home() {
           </p>
           <Button variant="white">Сайт HART-DEVELOPMENT</Button>
         </div>
-        <div className="min-h-[275px] max-h-[588px]">
-          <img
-            src="images/crane.png"
-            alt="photo"
-            className="w-full h-full object-cover"
-          />
-        </div>
+        <div
+          className="w-full h-inherit min-h-[275px] sm:min-h-[394px] 2xl:min-h-[588px]"
+          style={{
+            background:
+              " url('images/crane.png') center right / cover scroll no-repeat",
+          }}
+        ></div>
       </section>
       <RecaptchaProvider>
         <Excursion />
       </RecaptchaProvider>
-
       <Presentation />
     </>
   );

@@ -17,7 +17,7 @@ export const Backyard = () => {
         ]}
         className="aspect-[1100/2200]"
       >
-        <div className="absolute bottom-[120px] h-[300px] z-10 container flex flex-col gap-[48px] lg:flex-row lg:justify-between xl:gap-[164px] lg:items-end">
+        <div className="absolute bottom-[100px] h-[300px] z-10 container flex flex-col gap-[48px] lg:flex-row lg:justify-between xl:gap-[164px] lg:items-end">
           <h2 className="header_2 text-white">Двор&nbsp;мечты</h2>
           <p className="body_base text-white">
             Закрытый террасированный двор-парк — настоящее чудо света.

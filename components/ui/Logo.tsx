@@ -9,7 +9,10 @@ export const Logo = (props: Props) => {
   const currentColor = props.color ?? "white";
 
   return (
-    <Link href="/" className="block w-fit mt-[-16px]">
+    <Link
+      href="/"
+      className=" w-fit mt-[-16px] flex justify-center items-center"
+    >
       {props.large ? (
         <svg
           width="225"

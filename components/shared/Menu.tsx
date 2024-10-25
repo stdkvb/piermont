@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { useState } from "react";
 import Link from "next/link";
 import {
@@ -8,6 +9,8 @@ import {
   SheetTrigger,
   SheetClose,
   Separator,
+  SheetHeader,
+  SheetTitle,
 } from "../ui";
 
 import { Header } from "./Header";
@@ -39,11 +42,11 @@ const menu = [
     links: [
       { id: 1, title: "Уникальная архитектура", link: "#" },
       { id: 2, title: "Натуральные материалы", link: "#" },
-      { id: 2, title: "Двор мечты", link: "#" },
-      { id: 2, title: "Благоустройство двора", link: "#" },
-      { id: 2, title: "Отдых для всех", link: "#" },
-      { id: 2, title: "Премиальные лобби", link: "#" },
-      { id: 2, title: "Преимущества лобби", link: "#" },
+      { id: 3, title: "Двор мечты", link: "#" },
+      { id: 4, title: "Благоустройство двора", link: "#" },
+      { id: 5, title: "Отдых для всех", link: "#" },
+      { id: 6, title: "Премиальные лобби", link: "#" },
+      { id: 7, title: "Преимущества лобби", link: "#" },
     ],
     image: "/images/sofa.jpeg",
   },
@@ -67,8 +70,14 @@ const menu = [
 export const Menu: React.FC<MenuProps> = ({ inversion }) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const { openModal } = useModalStore();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
-    <Sheet>
+    <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
       {!inversion ? (
         <SheetTrigger>
           <svg
@@ -108,6 +117,9 @@ export const Menu: React.FC<MenuProps> = ({ inversion }) => {
         side="top"
         className="h-full bg-white p-0 flex flex-col gap-0 justify-start"
       >
+        <SheetHeader className="hidden">
+          <SheetTitle>Меню</SheetTitle>
+        </SheetHeader>
         <div className="flex items-center relative top-0">
           <Header inversion={true} />
           <SheetClose className="z-20 h-10 w-10 flex justify-center items-center absolute right-[1rem] sm:right-[2.125rem] lg:right-[4rem]">
@@ -121,23 +133,23 @@ export const Menu: React.FC<MenuProps> = ({ inversion }) => {
               <path
                 d="M8 24.5391L23.5563 8.98271"
                 stroke="#193232"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 d="M8 24.5391L23.5563 8.98271"
                 stroke="#193232"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 d="M24 24.5391L8.44365 8.98271"
                 stroke="#193232"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </SheetClose>
@@ -162,11 +174,8 @@ export const Menu: React.FC<MenuProps> = ({ inversion }) => {
             <div className="flex flex-col gap-7 sm:items-start relative w-full xl:w-[40%]">
               {menu.map((item) => {
                 return (
-                  <>
-                    <div
-                      key={item.id}
-                      className="flex flex-col items-center gap-[24px] sm:items-start   "
-                    >
+                  <React.Fragment key={item.id}>
+                    <div className="flex flex-col items-center gap-[24px] sm:items-start   ">
                       <span
                         className={`header_4 cursor-pointer ${
                           activeIndex == item.id
@@ -197,7 +206,7 @@ export const Menu: React.FC<MenuProps> = ({ inversion }) => {
                         );
                       })}
                     </div>
-                  </>
+                  </React.Fragment>
                 );
               })}
             </div>
@@ -227,7 +236,13 @@ export const Menu: React.FC<MenuProps> = ({ inversion }) => {
                 Оставьте контакты, и мы свяжемся с вами
               </p>
               <div className="cursor-pointer flex gap-[10px] items-center ">
-                <span className="header_4">Записаться на экскурсию</span>
+                <Link
+                  href="#excursion"
+                  className="header_4"
+                  onClick={closeMenu}
+                >
+                  Записаться на экскурсию
+                </Link>
                 <svg
                   className="mb-1 lg:w-[30px] lg:h-[30px]"
                   width="14"
@@ -253,7 +268,9 @@ export const Menu: React.FC<MenuProps> = ({ inversion }) => {
                 variant="green"
                 size="small"
                 className="max-w-[350px]"
-                onClick={() => openModal(<PresentationForm />)}
+                onClick={() => {
+                  openModal(<PresentationForm />);
+                }}
               >
                 Получить презентацию
               </Button>
@@ -275,7 +292,7 @@ export const Menu: React.FC<MenuProps> = ({ inversion }) => {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g clip-path="url(#clip0_431_3848)">
+                  <g clipPath="url(#clip0_431_3848)">
                     <path
                       d="M27.5994 37.8769H34.9988L34.0247 31.4686L34.9988 25.4619L33.2899 18.8741L34.1785 7.63824L32.4868 3.24642V0.631836H29.8124V1.65716H26.1212L25.0788 3.16952L21.4474 4.86131L22.8914 7.36482L26.574 7.95438L24.1047 9.94523L21.9173 9.23604L19.8496 5.56195L17.2863 3.96415L14.5521 4.30593L17.5682 7.33919L18.6705 12.7307L21.1056 14.0893L19.26 15.5589L14.4923 15.2513L11.6982 16.7551L15.4407 18.8314L17.2094 18.3956L21.2509 20.1131L23.199 19.2843L22.6265 23.0694L19.1404 27.7774L20.3366 35.2537L18.0467 36.4329L17.2692 37.8769H24.4038L23.8911 33.673L27.044 29.8964L30.6241 35.2025L28.2658 36.4499L27.5994 37.8769Z"
                       fill="#565656"

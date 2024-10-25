@@ -9,7 +9,7 @@ type Props = {};
 export const Presentation = (props: Props) => {
   const { openModal } = useModalStore();
   return (
-    <section className="container bg-gold py-[48px] sm:py-[56px] lg:py-[66px] flex flex-col gap-[32px] sm:gap-[64px] md:flex-row justify-between">
+    <section className="container bg-gold py-[48px] sm:py-[56px] lg:py-[66px] flex flex-col items-center gap-[32px] sm:gap-[64px] md:flex-row justify-between">
       <span className="card_text text-green">
         Хотите узнать больше?
         <br />

@@ -25,7 +25,7 @@ export const MainSlider = () => {
   };
 
   return (
-    <section className="w-full">
+    <section className="w-full relative">
       <Swiper
         pagination={{
           type: "fraction",

@@ -71,6 +71,9 @@ export const Excursion = () => {
       if (response.status === 200) {
         setSuccess(true);
         form.reset();
+        setTimeout(() => {
+          setSuccess(false);
+        }, 5000);
       }
     } catch (error) {
       console.error("Ошибка при отправке данных:", error);
@@ -81,7 +84,10 @@ export const Excursion = () => {
   };
 
   return (
-    <section className="container bg-white py-[64px] sm:py-[120px] flex flex-col gap-[64px] md:flex-row md:justify-between">
+    <section
+      id="excursion"
+      className="container bg-white py-[64px] sm:py-[120px] flex flex-col gap-[64px] md:flex-row md:justify-between"
+    >
       <div className="max-w-[657px]">
         <img
           src="images/woman.png"

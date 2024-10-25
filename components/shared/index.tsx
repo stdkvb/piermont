@@ -11,7 +11,6 @@ export { Apartments } from "./Apartments";
 export { ApartmentCard } from "./ApartmentCard";
 export { Presentation } from "./Presentation";
 export { Excursion } from "./Excursion";
-export { Menu } from "./Menu";
 export { Modal } from "./Modal";
 export { PresentationForm } from "./PresentationForm";
 export { Backyard } from "./Backyard";
