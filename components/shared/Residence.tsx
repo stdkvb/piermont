@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { ParallaxBanner } from "react-scroll-parallax";
 import { Button } from "../ui";
 import { useModalStore } from "@/store/modal";
@@ -10,8 +11,8 @@ export const Residence = () => {
     <section className="min-h-[840px] flex items-end">
       <ParallaxBanner
         layers={[
-          { image: "images/residence.png", speed: -20, expanded: false },
-          { image: "images/tree.png", speed: -5, expanded: false },
+          { image: "images/residence.webp", speed: -20, expanded: false },
+          { image: "images/tree.webp", speed: -5, expanded: false },
         ]}
         className="aspect-[2455/4995] lg:aspect-[1920/2400]"
       >
@@ -177,7 +178,11 @@ export const Residence = () => {
             <br />
             с собственными террасами и отдельным входом
           </p>
-          <Button variant="white">Выбрать квартиру</Button>
+          <Button variant="white" asChild>
+            <Link href="#apartments" className="text-center cursor-pointer">
+              Выбрать квартиру
+            </Link>
+          </Button>
         </div>
       </ParallaxBanner>
     </section>

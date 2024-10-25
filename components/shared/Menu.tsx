@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
   Button,
@@ -34,7 +34,7 @@ const menu = [
       { id: 5, title: "Выбрать квартиру", link: "#" },
       { id: 6, title: "HART Development", link: "#" },
     ],
-    image: "/images/entrance.jpeg",
+    image: "/images/entrance.webp",
   },
   {
     id: 2,
@@ -48,7 +48,7 @@ const menu = [
       { id: 6, title: "Премиальные лобби", link: "#" },
       { id: 7, title: "Преимущества лобби", link: "#" },
     ],
-    image: "/images/sofa.jpeg",
+    image: "/images/sofa.webp",
   },
   {
     id: 3,
@@ -57,13 +57,13 @@ const menu = [
       { id: 1, title: "Выбор по параметрам", link: "#" },
       { id: 2, title: "Выбор на схеме", link: "#" },
     ],
-    image: "/images/table.png",
+    image: "/images/table.webp",
   },
   {
     id: 4,
     title: "Контакты",
     links: [],
-    image: "/images/crane.png",
+    image: "/images/crane.webp",
   },
 ];
 
@@ -75,6 +75,15 @@ export const Menu: React.FC<MenuProps> = ({ inversion }) => {
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
+
+  useEffect(() => {
+    if (!isMenuOpen) {
+      document.body.style.overflow = "hidden";
+      setTimeout(() => {
+        document.body.style.overflow = "";
+      }, 100); // Время, которое потребуется на анимацию закрытия
+    }
+  }, [isMenuOpen]);
 
   return (
     <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
@@ -114,6 +123,7 @@ export const Menu: React.FC<MenuProps> = ({ inversion }) => {
         <div className="h-10 w-10"></div>
       )}
       <SheetContent
+        tabIndex={-1}
         side="top"
         className="h-full bg-white p-0 flex flex-col gap-0 justify-start"
       >
@@ -279,7 +289,7 @@ export const Menu: React.FC<MenuProps> = ({ inversion }) => {
               <Link
                 href="#"
                 target="_blank"
-                className="body_base text-semiMediumGrey text-center lg:text-rights"
+                className="body_base text-semiMediumGrey text-center lg:text-right"
               >
                 Перейти на сайт <br className="hidden lg:block" />
                 застройщика

@@ -82,7 +82,8 @@ export const UniqueFormats = () => {
           className="w-screen h-full flex-shrink-0 md:w-[960px]"
         >
           <img
-            src="/images/patio.png"
+            src="/images/patio.webp"
+            loading="lazy"
             alt="photo"
             className="w-full h-full object-cover"
           />
@@ -93,7 +94,12 @@ export const UniqueFormats = () => {
           }}
           className="container h-full w-screen flex flex-col items-center justify-between gap-[24px] py-[5vh] 2xl:gap-[40px]  flex-shrink-0 md:w-[820px]"
         >
-          <img src="/images/plan1.png" alt="plan" className="max-h-[320px]" />
+          <img
+            src="/images/plan1.webp"
+            alt="plan"
+            loading="lazy"
+            className="max-h-[320px]"
+          />
           <p className="header_4 text-gold uppercase">
             Двухуровневый пентхаус с патио
           </p>
@@ -119,7 +125,7 @@ export const UniqueFormats = () => {
           className="flex h-full w-screen flex-shrink-0 py-[5vh] md:w-[960px]"
           style={{
             background:
-              "linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url('/images/room.png') center center / cover scroll no-repeat",
+              "linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url('/images/room.webp') center center / cover scroll no-repeat",
           }}
         >
           <div className="container w-screen max-w-[1100px] flex flex-col items-start justify-between">

@@ -1,4 +1,3 @@
-import { color } from "framer-motion";
 import { Button, Logo } from "../ui";
 import { Menu } from "./Menu";
 import Link from "next/link";
@@ -18,8 +17,11 @@ export const Header: React.FC<HeaderProps> = ({ inversion }) => {
         variant={inversion ? "roundedGreen" : "rounded"}
         size="small"
         className="hidden lg:block min-w-60 !max-w-[320px]"
+        asChild
       >
-        Выбрать квартиру
+        <Link href="#apartments" className="text-center cursor-pointer">
+          Выбрать квартиру
+        </Link>
       </Button>
       <Logo color={inversion ? "#193232" : null} />
       <div className="flex items-center gap-3">

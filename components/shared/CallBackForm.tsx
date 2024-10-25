@@ -46,6 +46,7 @@ export const CallBackForm = (props: Props) => {
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
   }
+
   return (
     <div className="flex flex-col gap-[48px] items-center w-full sm:max-w-[600px] 2xl:max-w-[934px]">
       <h4 className="text-gold header_2">Заказать звонок</h4>
@@ -82,7 +83,7 @@ export const CallBackForm = (props: Props) => {
                       value={field.value}
                       onChange={field.onChange}
                     >
-                      <Input placeholder="+7 (000) 000-00-00" />
+                      <Input placeholder="+7 (000) 000-00-00" type="tel" />
                     </InputMask>
                   </FormControl>
                 </div>

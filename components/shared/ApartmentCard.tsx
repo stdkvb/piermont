@@ -26,6 +26,7 @@ export const ApartmentCard: React.FC<ApartmentCardProps> = ({ data }) => {
             <img
               src={data.image}
               alt="plan"
+              loading="lazy"
               className="w-full object-contain max-h-[305px] aspect-[456/305]"
             />
             <p className="header_3 text-gold uppercase md:text-[40px]">
@@ -47,7 +48,7 @@ export const ApartmentCard: React.FC<ApartmentCardProps> = ({ data }) => {
           <div className="card__back hidden lg:flex lg:absolute top-0 bottom-0 right-0 left-0 px-[16px] py-[32px] sm:p-[64px] bg-white flex-col gap-[32px] items-center rounded-[6px] md:min-h-[660px]">
             <img
               className="h-full w-full object-cover max-h-[430px]"
-              src="/images/chairs.png"
+              src="/images/chairs.webp"
               alt="plan"
             />
             <Button variant="gold" className="text-white w-full !max-w-[100%]">

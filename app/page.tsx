@@ -27,8 +27,9 @@ export default function Home() {
       <Panorama />
       <section className="container py-[64px] md:py-[160px] xl:py-[120px] flex flex-col gap-[24px] xl:flex-row xl:gap-[84px]">
         <img
-          src="images/architecture.jpeg"
+          src="images/architecture.webp"
           alt="photo"
+          loading="lazy"
           className="min-h-[468px] max-h-[668px] object-cover w-full"
         />
         <div className="flex flex-col gap-[24px] lg:w-[584px] xl:justify-end">
@@ -71,7 +72,7 @@ export default function Home() {
           className="w-full h-inherit min-h-[275px] sm:min-h-[394px] 2xl:min-h-[588px]"
           style={{
             background:
-              " url('images/crane.png') center right / cover scroll no-repeat",
+              " url('images/crane.webp') center right / cover scroll no-repeat",
           }}
         ></div>
       </section>

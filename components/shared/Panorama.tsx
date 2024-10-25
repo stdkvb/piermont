@@ -91,8 +91,9 @@ export const Panorama: React.FC = () => {
           style={{ width: "200%", minWidth: "2518px" }}
         >
           <img
-            src="images/panorama.png"
+            src="images/panorama.webp"
             alt="Panorama"
+            loading="lazy"
             className="h-full w-full object-cover min-h-[720px] max-h-[948px]"
           />
         </motion.div>

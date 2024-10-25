@@ -90,7 +90,8 @@ export const Excursion = () => {
     >
       <div className="max-w-[657px]">
         <img
-          src="images/woman.png"
+          src="images/woman.webp"
+          loading="lazy"
           alt="photo"
           className="w-full h-full object-contain"
         />
@@ -127,7 +128,7 @@ export const Excursion = () => {
                         value={field.value}
                         onChange={field.onChange}
                       >
-                        <Input placeholder="+7 (000) 000-00-00" />
+                        <Input placeholder="+7 (000) 000-00-00" type="tel" />
                       </InputMask>
                     </FormControl>
                   </div>

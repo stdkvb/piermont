@@ -7,7 +7,7 @@ const apartments = [
   {
     id: 1,
     title: "2-К. ТАУНХАУС С ПАТИО",
-    image: "/images/plan1.png",
+    image: "/images/plan1.webp",
     specifications: [
       { id: 1, title: "Секция", value: "3" },
       { id: 2, title: "Площадь", value: "82 М2" },
@@ -19,7 +19,7 @@ const apartments = [
   {
     id: 2,
     title: "1-К. КВАРТИРА С балконом",
-    image: "/images/plan2.png",
+    image: "/images/plan2.webp",
     specifications: [
       { id: 1, title: "Секция", value: "3" },
       { id: 2, title: "Площадь", value: "45 М2" },
@@ -31,7 +31,7 @@ const apartments = [
   {
     id: 3,
     title: "3-К. КВАРТИРА С ТЕРРАСОЙ",
-    image: "/images/plan3.png",
+    image: "/images/plan3.webp",
     specifications: [
       { id: 1, title: "Секция", value: "3" },
       { id: 2, title: "Площадь", value: "105 М2" },
@@ -44,7 +44,10 @@ const apartments = [
 
 export const Apartments = (props: Props) => {
   return (
-    <section className="container py-[100px] flex flex-col gap-[32px] sm:gap-[64px]">
+    <section
+      id="apartments"
+      className="container py-[100px] flex flex-col gap-[32px] sm:gap-[64px]"
+    >
       <h2 className="header_2 text-gold">Выбрать квартиру</h2>
       <div className="flex flex-col gap-[20px] md:grid grid-cols-2 lg:flex lg:flex-row">
         {apartments.map((apartment) => {

@@ -28,13 +28,13 @@ export const Footer = () => {
       </div>
       <div className="flex flex-col gap-8 sm:gap-16 md:w-full lg:flex-row lg:items-center lg:justify-between">
         <nav className="flex flex-col gap-[32px] items-center sm:items-start md:flex-1">
-          <Link href="#" className="card_text text-white">
+          <Link href="/" className="card_text text-white">
             Главная
           </Link>
           <Link href="#" className="card_text text-white">
             Архитектура и благоустройство
           </Link>
-          <Link href="#" className="card_text text-white">
+          <Link href="#apartments" className="card_text text-white">
             Выбрать квартиру
           </Link>
           <Link href="#" className="card_text text-white">

@@ -7,7 +7,7 @@ export const Backyard = () => {
     <section className="h-screen max-h-[1080px] flex flex-col justify-end relative">
       <ParallaxBanner
         layers={[
-          { image: "images/backyard.jpeg", speed: -20, expanded: false },
+          { image: "images/backyard.webp", speed: -20, expanded: false },
           {
             image:
               "linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)) center center / cover scroll no-repeat",

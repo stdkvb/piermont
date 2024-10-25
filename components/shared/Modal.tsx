@@ -1,6 +1,13 @@
 "use client";
 import { useModalStore } from "@/store/modal";
-import { Drawer, DrawerContent, DrawerClose, Button } from "../ui";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerClose,
+  Button,
+  DrawerTitle,
+  DrawerHeader,
+} from "../ui";
 
 export const Modal = () => {
   const { active, modalContent, closeModal, openModal } = useModalStore();
@@ -13,6 +20,10 @@ export const Modal = () => {
       }}
     >
       <DrawerContent className="h-[75vh] sm:h-full bg-white justify-center items-center">
+        <DrawerHeader className="hidden">
+          <DrawerTitle>Модальное окно</DrawerTitle>
+        </DrawerHeader>
+
         <DrawerClose
           onClick={closeModal}
           className="absolute top-[32px] right-[16px] sm:right-[64px] xl:right-[90px] w-fit p-0"

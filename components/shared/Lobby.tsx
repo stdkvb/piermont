@@ -70,7 +70,7 @@ export const Lobby = () => {
       className="min-h-[920px] sm:min-h-[1453px] md:min-h-[1662px] py-[25%] md:py-[120px] relative"
       style={{
         background:
-          "linear-gradient(rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.32)), url('images/lobby.jpeg') center center / cover scroll no-repeat",
+          "linear-gradient(rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.32)), url('images/lobby.webp') center center / cover scroll no-repeat",
       }}
     >
       <div ref={containerRef} className="container flex flex-col justify-end">

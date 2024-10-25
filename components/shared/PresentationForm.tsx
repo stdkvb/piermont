@@ -126,7 +126,7 @@ export const PresentationForm = () => {
                         value={field.value}
                         onChange={field.onChange}
                       >
-                        <Input placeholder="+7 (000) 000-00-00" />
+                        <Input placeholder="+7 (000) 000-00-00" type="tel" />
                       </InputMask>
                     </FormControl>
                   </div>

@@ -51,7 +51,7 @@ export const Details = (props: Props) => {
         className="relative sm:min-h-[577px] md:min-h-[717px] py-[64px] flex flex-col gap-[32px] lg:flex-row lg:items-center"
         style={{
           background:
-            "linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url('images/facade.jpeg') center center / cover scroll no-repeat",
+            "linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url('images/facade.webp') center center / cover scroll no-repeat",
         }}
       >
         <div className="top-0 left-0 container flex flex-col gap-[24px] z-10 lg:max-w-[584px] lg:justify-center">
@@ -73,6 +73,7 @@ export const Details = (props: Props) => {
               <div key={detail.id} className="flex flex-col gap-[24px] h-fit">
                 <Image
                   src={detail.image}
+                  loading="lazy"
                   alt="photo"
                   width={320}
                   height={360}
