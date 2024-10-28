@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.scss";
 
-import { Header, Footer, Modal } from "@/components/shared";
+import { Header, Footer, Modal, Cookies } from "@/components/shared";
 
 export const metadata: Metadata = {
   title: "ЖК Пьермонт",
+  description: "жилой комплекс Пьермонт",
 };
 
 export default function RootLayout({
@@ -22,6 +23,7 @@ export default function RootLayout({
         <main className="flex-1 bg-lightGrey">{children}</main>
         <Footer />
         <Modal />
+        <Cookies />
       </body>
     </html>
   );

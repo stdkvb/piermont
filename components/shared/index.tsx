@@ -16,3 +16,4 @@ export { PresentationForm } from "./PresentationForm";
 export { Backyard } from "./Backyard";
 export { ParallaxProvider } from "./ParallaxProvider";
 export { RecaptchaProvider } from "./RecaptchaProvider";
+export { Cookies } from "./Cookies";
