@@ -19,7 +19,7 @@ export default function RootLayout({
         className="antialiased min-h-screen flex flex-col"
         suppressHydrationWarning={true}
       >
-        <Header />
+        <Header transparent={true} />
         <main className="flex-1 bg-lightGrey">{children}</main>
         <Footer />
         <Modal />

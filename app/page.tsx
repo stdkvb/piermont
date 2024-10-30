@@ -45,6 +45,8 @@ export default function Home() {
       </section>
       <Slider data={data.secondSlider} />
       <Details />
+      {/* <Slider data={data.thirdSlider} /> */}
+
       <ParallaxProvider>
         <Backyard />
       </ParallaxProvider>

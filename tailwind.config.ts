@@ -9,6 +9,18 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      sm: "640px",
+
+      md: "769px",
+
+      lg: "1024px",
+
+      xl: "1280px",
+
+      "2xl": "1536px",
+    },
+
     extend: {
       colors: {
         gold: "#B9916A",
@@ -156,7 +168,14 @@ const config: Config = {
           color: theme("colors.darkGrey"),
           textDecoration: "underline",
         },
-
+        ".not_found": {
+          fontFamily: "MoniqaNarrowParagraph",
+          fontWeight: "400",
+          fontSize: "clamp(3rem, 32vw, 602px)",
+          lineHeight: "56%",
+          color: theme("colors.darkGrey"),
+          textTransform: "uppercase",
+        },
         ".container": {
           paddingLeft: "1rem",
           paddingRight: "1rem",

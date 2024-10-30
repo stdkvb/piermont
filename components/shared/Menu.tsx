@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import {
   Button,
@@ -18,7 +18,7 @@ import { useModalStore } from "@/store/modal";
 import { PresentationForm } from "./PresentationForm";
 
 interface MenuProps {
-  inversion?: boolean;
+  transparent?: boolean;
 }
 
 const menu = [
@@ -67,7 +67,7 @@ const menu = [
   },
 ];
 
-export const Menu: React.FC<MenuProps> = ({ inversion }) => {
+export const Menu: React.FC<MenuProps> = ({ transparent }) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const { openModal } = useModalStore();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -76,18 +76,9 @@ export const Menu: React.FC<MenuProps> = ({ inversion }) => {
     setIsMenuOpen(false);
   };
 
-  useEffect(() => {
-    if (!isMenuOpen) {
-      document.body.style.overflow = "hidden";
-      setTimeout(() => {
-        document.body.style.overflow = "";
-      }, 100); // Время, которое потребуется на анимацию закрытия
-    }
-  }, [isMenuOpen]);
-
   return (
     <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-      {!inversion ? (
+      {!isMenuOpen && (
         <SheetTrigger>
           <svg
             width="32"
@@ -98,29 +89,27 @@ export const Menu: React.FC<MenuProps> = ({ inversion }) => {
           >
             <path
               d="M5 16H27"
-              stroke="white"
+              stroke={transparent ? "white" : "#193232"}
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
             <path
               d="M5 8H27"
-              stroke="white"
+              stroke={transparent ? "white" : "#193232"}
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
             <path
               d="M5 24H27"
-              stroke="white"
+              stroke={transparent ? "white" : "#193232"}
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
           </svg>
         </SheetTrigger>
-      ) : (
-        <div className="h-10 w-10"></div>
       )}
       <SheetContent
         tabIndex={-1}
@@ -131,7 +120,7 @@ export const Menu: React.FC<MenuProps> = ({ inversion }) => {
           <SheetTitle>Меню</SheetTitle>
         </SheetHeader>
         <div className="flex items-center relative top-0">
-          <Header inversion={true} />
+          <Header inMenu={true} />
           <SheetClose className="z-20 h-10 w-10 flex justify-center items-center absolute right-[1rem] sm:right-[2.125rem] lg:right-[4rem]">
             <svg
               width="32"
@@ -247,7 +236,7 @@ export const Menu: React.FC<MenuProps> = ({ inversion }) => {
               </p>
               <div className="cursor-pointer flex gap-[10px] items-center ">
                 <Link
-                  href="#excursion"
+                  href="/#excursion"
                   className="header_4"
                   onClick={closeMenu}
                 >
@@ -268,7 +257,7 @@ export const Menu: React.FC<MenuProps> = ({ inversion }) => {
                 </svg>
               </div>
             </div>
-            <div className="flex flex-col items-center gap-[8px] sm:items-end sm:justify-between lg:items-start">
+            <div className="flex flex-col items-center gap-[8px] sm:items-start sm:justify-between lg:items-start">
               <p className="body_base text-semiMediumGrey text-center sm:text-left">
                 Хотите узнать больше?
                 <br />
@@ -277,7 +266,7 @@ export const Menu: React.FC<MenuProps> = ({ inversion }) => {
               <Button
                 variant="green"
                 size="small"
-                className="max-w-[350px]"
+                className="!max-w-full lg:max-w-[457px]"
                 onClick={() => {
                   openModal(<PresentationForm />);
                 }}
@@ -285,7 +274,7 @@ export const Menu: React.FC<MenuProps> = ({ inversion }) => {
                 Получить презентацию
               </Button>
             </div>
-            <div className="w-full flex flex-col items-center sm:col-span-2 lg:col-span-1 sm:flex-row sm:justify-between lg:flex-col lg:items-end lg:gap-[40px]">
+            <div className="w-full flex flex-col items-center gap-[8px] sm:col-span-2 lg:col-span-1 sm:flex-row sm:justify-between lg:flex-col lg:items-end lg:gap-[40px]">
               <Link
                 href="#"
                 target="_blank"
@@ -294,7 +283,7 @@ export const Menu: React.FC<MenuProps> = ({ inversion }) => {
                 Перейти на сайт <br className="hidden lg:block" />
                 застройщика
               </Link>
-              <div>
+              <div className="sm:w-[48%] lg:w-fit">
                 <svg
                   width="171"
                   height="39"

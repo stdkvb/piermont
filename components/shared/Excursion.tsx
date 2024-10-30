@@ -182,7 +182,7 @@ export const Excursion = () => {
                 variant="green"
                 size="small"
                 type="submit"
-                className="w-full md:!max-w-[584px]"
+                className="w-full !max-w-full lg:!max-w-[310px] xl:!max-w-[584px]"
               >
                 {loading ? (
                   <Loader2 className="h-6 w-6 animate-spin" />

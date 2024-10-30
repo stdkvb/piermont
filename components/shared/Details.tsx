@@ -14,25 +14,23 @@ type Props = {};
 
 export const Details = (props: Props) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const detailsSectionRef = useRef<HTMLDivElement>(null);
+  const detailsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const container = containerRef.current;
-    const detailsSection = detailsSectionRef.current;
+    const details = detailsRef.current;
 
-    if (container && detailsSection) {
-      const cardWidth = window.innerWidth >= 768 ? 524 : 272;
-      const totalWidth = data.details.length * cardWidth;
-      container.style.width = `${totalWidth}px`;
+    if (container && details) {
+      const totalWidth = window.innerWidth >= 1024 ? 2416 : 1328;
+      details.style.width = `${totalWidth}px`;
 
-      const scrollTween = gsap.to(container, {
-        x: -totalWidth + cardWidth * (window.innerWidth >= 768 ? 2 : 1),
+      const scrollTween = gsap.to(details, {
+        x: -totalWidth + (window.innerWidth >= 1024 ? 320 : 240),
         ease: "none",
         scrollTrigger: {
-          trigger: detailsSection,
+          trigger: container,
           start: "top top",
-          end: () =>
-            `+=${totalWidth - cardWidth * (window.innerWidth >= 768 ? 2 : 1)}`,
+          end: () => `+=${totalWidth - window.innerWidth}`,
           scrub: 1,
           pin: true,
           anticipatePin: 1,
@@ -46,9 +44,9 @@ export const Details = (props: Props) => {
   }, []);
 
   return (
-    <div ref={detailsSectionRef}>
+    <div ref={containerRef}>
       <section
-        className="relative sm:min-h-[577px] md:min-h-[717px] py-[64px] flex flex-col gap-[32px] lg:flex-row lg:items-center"
+        className=" relative sm:min-h-[577px] lg:min-h-[717px] py-[64px] flex flex-col gap-[32px] lg:flex-row lg:items-center"
         style={{
           background:
             "linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url('images/facade.webp') center center / cover scroll no-repeat",
@@ -65,19 +63,18 @@ export const Details = (props: Props) => {
 
         <div className="overflow-hidden h-full flex lg:items-center">
           <div
-            ref={containerRef}
+            ref={detailsRef}
             className="flex gap-[32px] lg:gap-[204px] ml-[16px] sm:ml-[34px] lg:ml-[0]"
-            style={{ willChange: "transform", display: "flex" }}
+            style={{ willChange: "transform" }}
           >
             {data.details.map((detail) => (
               <div key={detail.id} className="flex flex-col gap-[24px] h-fit">
                 <Image
                   src={detail.image}
-                  loading="lazy"
                   alt="photo"
                   width={320}
                   height={360}
-                  className="object-cover w-full min-w-[240px] h-[240px] md:min-w-[320px] md:h-[360px]"
+                  className="object-cover w-full min-w-[240px] h-[240px] lg:min-w-[320px] lg:h-[360px]"
                 />
                 <p className="body_base uppercase text-white">{detail.title}</p>
               </div>

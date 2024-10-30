@@ -17,7 +17,7 @@ export const Residence = () => {
         className="aspect-[2455/4995] lg:aspect-[1920/2400]"
       >
         <div
-          className="absolute top-[48px] md:top-[120px] lg:top-[200px] h-fit inset-0 container  grid grid-cols-[1fr_auto] grid-rows-[max-content_max-content] gap-4 lg:grid-cols-3 lg:grid-rows-1 lg:items-center"
+          className="absolute top-[48px] md:top-[120px] lg:top-[200px] h-[200px] inset-0 container  grid grid-cols-[1fr_auto] grid-rows-[max-content_max-content] gap-4 lg:grid-cols-3 lg:grid-rows-1 lg:items-center"
           onClick={() => openModal(<PresentationForm />)}
         >
           <h1 className="header_2 text-gold col-span-1 row-span-1">

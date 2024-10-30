@@ -86,10 +86,7 @@ export const Panorama: React.FC = () => {
         ref={panoramaRef}
         className="relative w-full h-full overflow-x-scroll whitespace-nowrap no-scrollbar"
       >
-        <motion.div
-          className="inline-block h-full"
-          style={{ width: "200%", minWidth: "2518px" }}
-        >
+        <motion.div className="inline-block h-full w-[200%] min-w-[2518px]">
           <img
             src="images/panorama.webp"
             alt="Panorama"

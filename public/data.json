@@ -128,29 +128,6 @@
     "id": 5,
     "title": "плитка",
     "image": "/images/tile.webp"
-  },  {
-    "id": 6,
-    "title": "белый кирпич",
-    "image": "/images/bricks.webp"
-  },
-  {
-    "id": 7,
-    "title": "дерево",
-    "image": "/images/wood.webp"
-  },
-  {
-    "id": 8,
-    "title": "натуральный камень",
-    "image": "/images/stone.webp"
-  },
-  {
-    "id": 9,
-    "title": "терракот",
-    "image": "/images/terracotta.webp"
-  },  {
-    "id": 10,
-    "title": "плитка",
-    "image": "/images/tile.webp"
   }
 ]
 }

@@ -66,7 +66,7 @@ export const Slider: React.FC<SliderProps> = ({ data }) => {
           ))}
         </Swiper>
       </div>
-      <div className="w-full flex gap-[25px] sm:gap-34 justify-center items-center lg:absolute lg:left-[4rem] lg:bottom-[160px] lg:w-fit">
+      <div className="container w-full flex gap-[25px] sm:gap-34 items-center lg:px-0 lg:absolute lg:left-[4rem] lg:bottom-[160px] lg:w-fit">
         <button
           onClick={() => sliderRef.current?.slidePrev()}
           className="w-[42px] h-[42px] sm:w-[56px] sm:h-[56px]"

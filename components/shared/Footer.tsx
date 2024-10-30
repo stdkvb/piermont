@@ -45,7 +45,7 @@ export const Footer = () => {
           <span className="body_base text-white">
             © 2011–2023, Строительная компания HART
           </span>
-          <span className="description text-white text-center sm:text-left lg:text-right">
+          <span className="description text-white text-center sm:text-left lg:text-right opacity-[0.3]">
             Любая информация, представленная на данном сайте, носит
             исключительно информационный характер и ни при каких условиях
             не является публичной офертой, определяемой положениями статьи
@@ -53,7 +53,7 @@ export const Footer = () => {
             Интернет на странице информационного агентства, аккредитованного
             ЦБ РФ на раскрытие информации — ООО«Интерфакс-ЦРКИ».
           </span>
-          <Link href="#" className="description_link text-white">
+          <Link href="#" className="description_link text-white opacity-[0.3]">
             Политика конфиденциальности
           </Link>
         </div>
