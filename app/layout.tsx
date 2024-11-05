@@ -25,16 +25,7 @@ export default function RootLayout({
         className="antialiased min-h-screen flex flex-col"
         suppressHydrationWarning={true}
       >
-        <Header transparent={false} />
-        {/* <BreadCrumbs
-          homeElement={"Главная"}
-          separator={<span className="description"> — </span>}
-          activeClasses="text-[#6D6D6D] hover:cursor-default"
-          containerClasses=""
-          listClasses=""
-          capitalizeLinks
-        /> */}
-        <main className="flex-1 bg-lightGrey">{children}</main>
+        {children}
         <Footer />
         <Modal />
         <Cookies />

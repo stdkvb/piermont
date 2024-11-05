@@ -156,14 +156,14 @@ const config: Config = {
         ".description": {
           fontFamily: "FuturaPTMedium",
           fontWeight: "300",
-          fontSize: "clamp(0.75rem, 1.5vw + 0.125rem, 0.875rem)",
+          fontSize: "clamp(14px, 1.5vw + 0.125rem, 0.875rem)",
           lineHeight: "110%",
           color: theme("colors.darkGrey"),
         },
         ".description_link": {
           fontFamily: "FuturaPTMedium",
           fontWeight: "300",
-          fontSize: "clamp(0.75rem, 1.5vw + 0.125rem, 0.875rem)",
+          fontSize: "clamp(14px, 1.5vw + 0.125rem, 0.875rem)",
           lineHeight: "110%",
           color: theme("colors.darkGrey"),
           textDecoration: "underline",
@@ -171,7 +171,7 @@ const config: Config = {
         ".not_found": {
           fontFamily: "MoniqaNarrowParagraph",
           fontWeight: "400",
-          fontSize: "clamp(3rem, 32vw, 602px)",
+          fontSize: "clamp(353px, 49vw, 602px)",
           lineHeight: "56%",
           color: theme("colors.darkGrey"),
           textTransform: "uppercase",

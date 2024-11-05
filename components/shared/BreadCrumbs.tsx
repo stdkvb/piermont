@@ -26,10 +26,12 @@ export const BreadCrumbs = ({
   const pathNames = paths.split("/").filter((path) => path);
 
   return (
-    <div className="container">
-      <ul className={`${containerClasses} flex items-center gap-[4px]`}>
+    <div
+      className={`container py-[32px] ${containerClasses} top-[79px] md:top-[108px]`}
+    >
+      <ul className="flex items-center gap-[4px]">
         <li className={listClasses}>
-          <Link href={"/"} className="description">
+          <Link href={"/"} className={`description ${listClasses}`}>
             {homeElement}
           </Link>
         </li>

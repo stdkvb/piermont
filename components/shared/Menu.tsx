@@ -62,6 +62,7 @@ const menu = [
   {
     id: 4,
     title: "Контакты",
+    link: "/contacts",
     links: [],
     image: "/images/crane.webp",
   },
@@ -174,7 +175,21 @@ export const Menu: React.FC<MenuProps> = ({ transparent }) => {
               {menu.map((item) => {
                 return (
                   <React.Fragment key={item.id}>
-                    <div className="flex flex-col items-center gap-[24px] sm:items-start   ">
+                    {item.link ? (
+                      <Link
+                        href={item.link}
+                        className={`header_4 cursor-pointer ${
+                          activeIndex == item.id
+                            ? "underline underline-offset-3"
+                            : ""
+                        }`}
+                        onClick={() => {
+                          setActiveIndex(item.id);
+                        }}
+                      >
+                        {item.title}
+                      </Link>
+                    ) : (
                       <span
                         className={`header_4 cursor-pointer ${
                           activeIndex == item.id
@@ -187,7 +202,7 @@ export const Menu: React.FC<MenuProps> = ({ transparent }) => {
                       >
                         {item.title}
                       </span>
-                    </div>
+                    )}
                     <div
                       className={`flex flex-col gap-[16px] sm:items-start lg:absolute lg:right-0 lg:top-0 xl:translate-x-[100%] ${
                         activeIndex != item.id ? "hidden" : ""

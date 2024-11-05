@@ -37,7 +37,7 @@ export const Footer = () => {
           <Link href="#apartments" className="card_text text-white">
             Выбрать квартиру
           </Link>
-          <Link href="#" className="card_text text-white">
+          <Link href="/contacts" className="card_text text-white">
             Контакты
           </Link>
         </nav>
