@@ -2,24 +2,21 @@
 import { Button } from "../ui";
 import { ParallaxBanner } from "react-scroll-parallax";
 
-export const Backyard = () => {
+interface BackyardProps {
+  imageSrc: string;
+  button: boolean;
+}
+
+export const Backyard: React.FC<BackyardProps> = ({ imageSrc, button }) => {
   return (
     <section className="h-screen max-h-[1080px] flex flex-col justify-end relative">
       <ParallaxBanner
-        layers={[
-          { image: "images/backyard.webp", speed: -20, expanded: false },
-          {
-            image:
-              "linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)) center center / cover scroll no-repeat",
-            speed: -20,
-            expanded: false,
-          },
-        ]}
+        layers={[{ image: imageSrc, speed: -20, expanded: false }]}
         className="aspect-[1100/2200]"
       >
-        <div className="absolute bottom-[100px] h-[300px] z-10 container flex flex-col gap-[48px] lg:flex-row lg:justify-between xl:gap-[164px] lg:items-end">
+        <div className="absolute bottom-[32px] z-10 container flex flex-col gap-[48px] justify-between  lg:items-end lg:flex-row xl:gap-[164px] xl:bottom-[64px]">
           <h2 className="header_2 text-white">Двор&nbsp;мечты</h2>
-          <p className="body_base text-white">
+          <p className="body_base text-white max-w-[837px]">
             Закрытый террасированный двор-парк — настоящее чудо света.
             Он разделён на множество зон, как для игр детей разного возраста,
             так и на зоны тихого отдыха и даже зоны для интеллектуальных игр.
@@ -27,7 +24,7 @@ export const Backyard = () => {
             плавными линиями тропинок и арт-объектами создающими ощущение
             слияния с природой, приватности и гармонии.
           </p>
-          <Button variant="gold">узнать подробнее</Button>
+          {button && <Button variant="gold">узнать подробнее</Button>}
         </div>
       </ParallaxBanner>
     </section>

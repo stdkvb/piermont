@@ -18,3 +18,4 @@ export { ParallaxProvider } from "./ParallaxProvider";
 export { RecaptchaProvider } from "./RecaptchaProvider";
 export { Cookies } from "./Cookies";
 export { BreadCrumbs } from "./BreadCrumbs";
+export { Materials } from "./Materials";

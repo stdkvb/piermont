@@ -104,6 +104,27 @@
     }
   ]
 },
+"fifthSlider": {
+  "id": 4,
+  "title": "Ваш дом не заканчивается квартирой",
+  "slides": [
+    {
+      "id": 1,
+      "title": "Зоны лобби в стилистике премиального отеля",
+      "image": "images/5.1.webp"
+    },
+    {
+      "id": 2,
+      "title": "Арт-объекты, панорамные окна и зелень в холлах",
+      "image": "images/5.2.webp"
+    },
+    {
+      "id": 3,
+      "title": "Коворкинг и бизнес-зоны для полноценного хоум-офиса",
+      "image": "images/5.3.webp"
+    }
+  ]
+},
 "details": [
   {
     "id": 1,
@@ -128,6 +149,32 @@
     "id": 5,
     "title": "плитка",
     "image": "/images/tile.webp"
+  }
+],
+"materials": [
+  {
+    "id": 1,
+    "title": "белый кирпич",
+    "image": "/images/bricks.webp"
+  },
+  {
+    "id": 2,
+    "title": "дерево",
+    "image": "/images/wood2.webp"
+  },
+  {
+    "id": 3,
+    "title": "натуральный камень",
+    "image": "/images/stone2.webp"
+  },
+  {
+    "id": 4,
+    "title": "металл",
+    "image": "/images/metal.webp"
+  },  {
+    "id": 5,
+    "title": "плитка",
+    "image": "/images/tile2.webp"
   }
 ]
 }

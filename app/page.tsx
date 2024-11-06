@@ -51,7 +51,7 @@ export default function Home() {
         {/* <Slider data={data.thirdSlider} /> */}
 
         <ParallaxProvider>
-          <Backyard />
+          <Backyard imageSrc="images/backyard.webp" button={true} />
         </ParallaxProvider>
         <UniqueFormats />
         <Lobby />

@@ -17,6 +17,7 @@ export const Presentation = (props: Props) => {
       </span>
       <Button
         variant="black"
+        size="small"
         onClick={() =>
           openModal(
             <RecaptchaProvider>
