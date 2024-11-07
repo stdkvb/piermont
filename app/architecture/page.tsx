@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   Header,
   Excursion,
@@ -8,6 +7,7 @@ import {
   ParallaxProvider,
   Slider,
   Materials,
+  Oasis,
 } from "@/components/shared";
 
 import data from "../../public/data.json";
@@ -44,7 +44,7 @@ export default function Page() {
             и акваторию Белой. В месте, где весна наступает чуточку раньше,
             а вместо осени вы встречаете бархатный сезон.
           </p>
-          <div className="hidden sm:block xl:order-2  aspect-square">
+          <div className="hidden sm:block xl:order-2 sm:aspect-auto">
             <img
               src="images/airview.webp"
               loading="lazy"
@@ -53,6 +53,7 @@ export default function Page() {
             />
           </div>
         </section>
+        <Oasis />
         <Materials />
         <ParallaxProvider>
           <Backyard imageSrc="images/garden.webp" button={false} />
@@ -81,7 +82,6 @@ export default function Page() {
             </p>
           </div>
         </section>
-
         <Lobby />
         <section className="py-[64px] md:py-[160px] md:pb-0 xl:py-[120px] flex flex-col gap-[24px] xl:flex-row xl:gap-[84px]">
           <div className="container flex flex-col gap-[24px] w-full md:max-w-[584px] xl:justify-end">
