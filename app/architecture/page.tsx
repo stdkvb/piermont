@@ -8,6 +8,7 @@ import {
   Slider,
   Materials,
   Oasis,
+  Architecture,
 } from "@/components/shared";
 
 import data from "../../public/data.json";
@@ -17,19 +18,9 @@ export default function Page() {
     <>
       <Header transparent={true} />
       <main className="flex-1 bg-lightGrey">
-        <section
-          className="container w-full h-screen flex items-center justify-center"
-          style={{
-            background:
-              "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/front.webp') center right / cover scroll no-repeat",
-          }}
-        >
-          <h1 className="header_2 xl:!text-[180px] text-white text-center">
-            Архитектура
-            <br />
-            вне времени
-          </h1>
-        </section>
+        <ParallaxProvider>
+          <Architecture />
+        </ParallaxProvider>
         <section className=" pt-[60px] pb-[32px] flex flex-col gap-[34px] sm:py-[120px] xl:flex-row xl:justify-center xl:gap-[64px] xl:items-center">
           <h2 className="container header_1 text-gold xl:pr-0 xl:text-right">
             навстречу <br className="hidden" />

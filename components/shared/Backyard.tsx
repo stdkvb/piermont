@@ -15,7 +15,7 @@ export const Backyard: React.FC<BackyardProps> = ({ imageSrc, button }) => {
         className="aspect-[1100/2200]"
       >
         <div
-          className="absolute inset-0  z-0"
+          className="absolute inset-0 z-0"
           style={{
             background:
               "linear-gradient(180deg, rgba(0, 0, 0, 0) 45.09%, rgba(0, 0, 0, 0.6) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0) 45.62%, rgba(0, 0, 0, 0.6) 99.98%)",

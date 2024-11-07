@@ -806,6 +806,9 @@ body {
 .aspect-square {
   aspect-ratio: 1 / 1;
 }
+.aspect-auto {
+  aspect-ratio: auto;
+}
 .h-10 {
   height: 2.5rem;
 }
@@ -2102,6 +2105,9 @@ input[type=search] {
   .md\:mb-\[70px\] {
     margin-bottom: 70px;
   }
+  .md\:ml-0 {
+    margin-left: 0px;
+  }
   .md\:block {
     display: block;
   }
@@ -2259,6 +2265,9 @@ input[type=search] {
   }
   .lg\:mr-0 {
     margin-right: 0px;
+  }
+  .lg\:ml-0 {
+    margin-left: 0px;
   }
   .lg\:block {
     display: block;
@@ -2440,6 +2449,9 @@ input[type=search] {
   .xl\:mb-0 {
     margin-bottom: 0px;
   }
+  .xl\:ml-0 {
+    margin-left: 0px;
+  }
   .xl\:block {
     display: block;
   }
@@ -2497,6 +2509,9 @@ input[type=search] {
   }
   .xl\:gap-\[84px\] {
     gap: 84px;
+  }
+  .xl\:\!p-0 {
+    padding: 0px !important;
   }
   .xl\:py-\[120px\] {
     padding-top: 120px;

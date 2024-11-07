@@ -20,22 +20,18 @@ export const Materials = (props: Props) => {
     const container = containerRef.current;
     const materials = materialsRef.current;
 
-    // Отключаем анимацию, если разрешение больше или равно 1066px
     if (window.innerWidth >= 1200) {
       return;
     }
 
     if (container && materials) {
-      const totalWidth = window.innerWidth >= 640 ? 1066 : 811;
+      const totalWidth = window.innerWidth >= 640 ? 1192 : 811;
       materials.style.width = `${totalWidth}px`;
 
-      // Находим последнюю карточку
       const lastCard = materials.lastElementChild as HTMLDivElement;
       if (lastCard) {
         const lastCardWidth = lastCard.offsetWidth;
 
-        // Рассчитываем `end` так, чтобы анимация завершалась,
-        // когда последняя карточка полностью видима
         const endValue =
           materials.offsetWidth - window.innerWidth + lastCardWidth - 40;
 
@@ -74,10 +70,10 @@ export const Materials = (props: Props) => {
           </p>
         </div>
 
-        <div className="overflow-hidden h-full flex lg:items-center lg:justify-center">
+        <div className="overflow-hidden h-full flex container xl:justify-center">
           <div
             ref={materialsRef}
-            className="flex gap-[24px] lg:gap-[48px] ml-[16px] sm:ml-[34px] lg:ml-[64px]"
+            className="flex gap-[24px] lg:gap-[48px]"
             style={{ willChange: "transform" }}
           >
             {data.materials.map((material) => (
