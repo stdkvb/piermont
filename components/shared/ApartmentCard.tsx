@@ -21,8 +21,8 @@ export const ApartmentCard: React.FC<ApartmentCardProps> = ({ data }) => {
   return (
     <>
       <div className="card w-full h-full md:min-h-[660px]">
-        <div className="card__content text-center relative transition-transform duration-1000">
-          <div className="card__front lg:absolute top-0 bottom-0 right-0 left-0 px-[16px] py-[32px] sm:py-[64px] bg-white flex flex-col gap-[32px] items-center justify-between rounded-[6px] md:min-h-[660px]">
+        <div className="text-center relative transition-transform duration-1000">
+          <div className="lg:absolute top-0 bottom-0 right-0 left-0 px-[16px] py-[32px] sm:py-[64px] bg-white flex flex-col gap-[32px] items-center justify-between rounded-[6px] md:min-h-[660px]">
             <img
               src={data.image}
               alt="plan"
@@ -45,7 +45,7 @@ export const ApartmentCard: React.FC<ApartmentCardProps> = ({ data }) => {
               ))}
             </ul>
           </div>
-          <div className="card__back hidden lg:flex lg:absolute top-0 bottom-0 right-0 left-0 px-[16px] py-[32px] sm:p-[64px] bg-white flex-col gap-[32px] items-center rounded-[6px] md:min-h-[660px]">
+          <div className="hidden lg:flex lg:absolute top-0 bottom-0 right-0 left-0 px-[16px] py-[32px] sm:p-[64px] bg-white flex-col gap-[32px] items-center rounded-[6px] md:min-h-[660px]">
             <img
               className="h-full w-full object-cover max-h-[430px]"
               src="/images/chairs.webp"

@@ -31,7 +31,7 @@ export default function NotFound() {
               <Link href="/">Вернуться на главную</Link>
             </Button>
           </div>
-          <h2 className="text-gold not_found">404</h2>
+          <h1 className="text-gold not_found">404</h1>
         </div>
       </main>
     </>

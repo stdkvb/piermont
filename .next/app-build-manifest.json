@@ -23,6 +23,12 @@
       "static/chunks/main-app.js",
       "static/css/app/architecture/page.css",
       "static/chunks/app/architecture/page.js"
+    ],
+    "/choice/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/choice/page.css",
+      "static/chunks/app/choice/page.js"
     ]
   }
 }
